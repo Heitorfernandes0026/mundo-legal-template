@@ -17,7 +17,7 @@ const HeroSection = () => {
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       {/* Gradient overlay only on the left side for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
       
       {/* Neon curved lines decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
