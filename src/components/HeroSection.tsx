@@ -55,19 +55,15 @@ const HeroSection = () => {
             </div>
 
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-none tracking-wide">
-              <span className="text-foreground">YOUR BODY </span>
-              <span className="text-gradient-neon">CAN</span>
+              <span className="text-gradient-neon">RESULTADOS REAIS</span>
               <br />
-              <span className="text-gradient-neon">STAND</span>
-              <span className="text-foreground"> ALMOST</span>
-              <br />
-              <span className="text-foreground">ANYTHING.</span>
+              <span className="text-foreground">EXIGEM </span>
+              <span className="text-gradient-neon">MÉTODO.</span>
             </h1>
 
             <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
-              Welcome to Fitix - Your Ultimate Fitness Companion! Step into a world 
-              where each stride takes you nearer to your fitness aspirations. Join our lively 
-              community and tap into the magic of transformation.
+              Estratégia, acompanhamento e evolução. Conheça o sistema estruturado 
+              que vai levar seu corpo ao próximo nível.
             </p>
 
             {/* Stats */}
