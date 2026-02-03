@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import heroAthlete from "@/assets/hero-athlete.png";
+import heroBackground from "@/assets/hero-background.jpeg";
 
 const stats = [
   { value: "1200+", label: "Member" },
@@ -10,7 +11,15 @@ const stats = [
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen hero-gradient overflow-hidden pt-20">
+    <section className="relative min-h-screen overflow-hidden pt-20">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      />
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-background/70" />
+      
       {/* Neon curved lines decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <svg
