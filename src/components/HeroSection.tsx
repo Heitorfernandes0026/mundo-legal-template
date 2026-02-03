@@ -11,18 +11,18 @@ const stats = [
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen overflow-hidden pt-20">
-      {/* Background Image */}
+      {/* Background Image - Full visibility */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/70" />
+      {/* Gradient overlay only on the left side for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
       
       {/* Neon curved lines decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <svg
-          className="absolute top-20 right-0 w-[800px] h-[800px] opacity-60"
+          className="absolute top-20 right-0 w-[800px] h-[800px] opacity-40"
           viewBox="0 0 800 800"
           fill="none"
         >
@@ -43,27 +43,11 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      {/* Badge decoration */}
-      <div className="absolute top-32 right-24 hidden lg:block">
-        <div className="w-28 h-28 rounded-full border-2 border-primary flex items-center justify-center rotate-12 animate-float">
-          <div className="text-center">
-            <div className="text-primary text-xs font-bold">GYM</div>
-            <div className="text-[8px] text-muted-foreground">BODYBUILDING</div>
-            <div className="w-8 h-8 mx-auto mt-1">
-              <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                <circle cx="12" cy="12" r="10" stroke="hsl(72 100% 50%)" strokeWidth="1" />
-                <path d="M8 12h8M12 8v8" stroke="hsl(72 100% 50%)" strokeWidth="2" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="container mx-auto px-6 pt-16 pb-8 relative z-10">
-        <div className="flex flex-col items-center justify-center min-h-[80vh]">
-          {/* Center content */}
-          <div className="space-y-8 text-center max-w-4xl">
-            <h1 className="font-display text-6xl md:text-7xl lg:text-8xl leading-none tracking-wide">
+        <div className="flex items-center min-h-[80vh]">
+          {/* Left content - Text aligned to the left */}
+          <div className="space-y-8 text-left max-w-xl">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-none tracking-wide">
               <span className="text-foreground">YOUR BODY </span>
               <span className="text-gradient-neon">CAN</span>
               <br />
@@ -73,27 +57,26 @@ const HeroSection = () => {
               <span className="text-foreground">ANYTHING.</span>
             </h1>
 
-            <p className="text-muted-foreground max-w-md mx-auto text-sm leading-relaxed">
+            <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
               Welcome to Fitix - Your Ultimate Fitness Companion! Step into a world 
               where each stride takes you nearer to your fitness aspirations. Join our lively 
-              community and tap into the magic of transformation. Dive into the Fitix 
-              journey and unleash your true potential!
+              community and tap into the magic of transformation.
             </p>
 
             {/* Stats */}
-            <div className="flex justify-center gap-12 py-6">
+            <div className="flex gap-8 py-4">
               {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="font-display text-4xl md:text-5xl text-foreground">
+                <div key={stat.label} className="text-left">
+                  <div className="font-display text-3xl md:text-4xl text-foreground">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-xs text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
             </div>
 
             {/* CTAs */}
-            <div className="flex justify-center gap-4">
+            <div className="flex gap-4">
               <Button variant="neon" size="lg" className="gap-2">
                 Get Started
                 <ArrowUpRight className="w-4 h-4" />
