@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-import heroAthlete from "@/assets/hero-athlete.png";
 import heroBackground from "@/assets/hero-background.jpeg";
 
 const stats = [
@@ -61,9 +60,9 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 pt-16 pb-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
-          <div className="space-y-8">
+        <div className="flex flex-col items-center justify-center min-h-[80vh]">
+          {/* Center content */}
+          <div className="space-y-8 text-center max-w-4xl">
             <h1 className="font-display text-6xl md:text-7xl lg:text-8xl leading-none tracking-wide">
               <span className="text-foreground">YOUR BODY </span>
               <span className="text-gradient-neon">CAN</span>
@@ -74,7 +73,7 @@ const HeroSection = () => {
               <span className="text-foreground">ANYTHING.</span>
             </h1>
 
-            <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
+            <p className="text-muted-foreground max-w-md mx-auto text-sm leading-relaxed">
               Welcome to Fitix - Your Ultimate Fitness Companion! Step into a world 
               where each stride takes you nearer to your fitness aspirations. Join our lively 
               community and tap into the magic of transformation. Dive into the Fitix 
@@ -82,7 +81,7 @@ const HeroSection = () => {
             </p>
 
             {/* Stats */}
-            <div className="flex gap-12 py-6">
+            <div className="flex justify-center gap-12 py-6">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="font-display text-4xl md:text-5xl text-foreground">
@@ -94,7 +93,7 @@ const HeroSection = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex gap-4">
+            <div className="flex justify-center gap-4">
               <Button variant="neon" size="lg" className="gap-2">
                 Get Started
                 <ArrowUpRight className="w-4 h-4" />
@@ -102,19 +101,6 @@ const HeroSection = () => {
               <Button variant="outline" size="lg" className="border-foreground/20 text-foreground hover:bg-foreground/5">
                 Explore More
               </Button>
-            </div>
-          </div>
-
-          {/* Right content - Hero Image */}
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative">
-              <img
-                src={heroAthlete}
-                alt="Professional athlete"
-                className="relative z-10 h-[500px] md:h-[600px] object-cover object-top"
-              />
-              {/* Neon glow effect behind athlete */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-20" />
             </div>
           </div>
         </div>
