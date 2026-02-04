@@ -1,4 +1,5 @@
 import { Instagram, MessageCircle } from "lucide-react";
+import contactBg from "@/assets/contact-bg.png";
 
 const ContactSection = () => {
   const whatsappNumber = "5531991607563";
@@ -7,11 +8,16 @@ const ContactSection = () => {
   const instagramLink = "https://instagram.com/blade_treinador";
 
   return (
-    <section id="contato" className="relative py-24 bg-card/30 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
+    <section id="contato" className="relative min-h-[80vh] md:min-h-screen overflow-hidden flex items-center">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${contactBg})` }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-background/70" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 py-24">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-gradient-neon mb-6 leading-none">
