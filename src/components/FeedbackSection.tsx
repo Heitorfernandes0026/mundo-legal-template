@@ -31,7 +31,7 @@ const FeedbackSection = () => {
 
           {/* Student Name */}
           <p className="text-center text-foreground/80 text-lg md:text-xl mt-6 font-medium">
-            Aluno Osmar Colen
+            Aluno Osmar Colen - Mentoria Blade Presencial
           </p>
         </div>
       </div>
