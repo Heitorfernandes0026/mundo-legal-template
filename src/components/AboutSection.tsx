@@ -8,11 +8,11 @@ const AboutSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${aboutBackground})` }}
       />
-      {/* Gradient overlay for text readability - from left */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+      {/* Gradient overlay for text readability - from right */}
+      <div className="absolute inset-0 bg-gradient-to-l from-background via-background/80 to-transparent" />
       
-      <div className="container mx-auto px-6 py-24 relative z-10">
-        <div className="max-w-xl">
+      <div className="container mx-auto px-6 py-24 relative z-10 flex justify-end">
+        <div className="max-w-xl text-right">
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-gradient-neon mb-8">
             SOBRE O RONALD
           </h2>
