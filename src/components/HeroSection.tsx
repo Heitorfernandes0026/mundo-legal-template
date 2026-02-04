@@ -48,10 +48,10 @@ const HeroSection = () => {
           {/* Left content - Text aligned to the left */}
           <div className="space-y-8 text-left max-w-xl">
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl leading-none tracking-wide">
-              <span className="text-gradient-neon">RESULTADOS REAIS</span>
+              <span className="text-gradient-neon">MAIS QUE UM TREINO,</span>
               <br />
-              <span className="text-foreground">EXIGEM </span>
-              <span className="text-gradient-neon">MÉTODO.</span>
+              <span className="text-foreground">UM SISTEMA DE </span>
+              <span className="text-gradient-neon">EVOLUÇÃO</span>
             </h1>
 
             <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
