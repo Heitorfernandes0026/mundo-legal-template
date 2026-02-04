@@ -1,5 +1,7 @@
 import storyLaunelina from "@/assets/story-launelina.jpeg";
-import storyRonara from "@/assets/story-ronara.jpeg";
+import storyReila from "@/assets/story-reila.png";
+import storyValeria from "@/assets/story-valeria.png";
+import storyMari from "@/assets/story-mari.jpeg";
 
 interface Story {
   name: string;
@@ -13,7 +15,7 @@ interface Story {
 }
 
 const SuccessStoriesSection = () => {
-  const stories: (Story | null)[] = [
+  const stories: Story[] = [
     {
       name: "Launelina",
       highlight: "-30kg",
@@ -25,13 +27,23 @@ const SuccessStoriesSection = () => {
       image: storyLaunelina,
     },
     {
-      name: "Ronara",
-      highlight: "-33kg",
-      testimonial: "Nunca gostei de academia e hoje não me imagino mais sem ela. Além do bem-estar, da saúde, a minha autoestima se aumentou bastante, pois depois que tive minha filha acabei me deixando de lado e foquei apenas em exercer meu papel de mãe. Ontem fui no Leandro e os resultados foram ótimos e isso me fez olhar para trás e reconhecer o quanto valeu a pena. Quero te agradecer de coração por esses 4 meses de trabalho incrível. Minha evolução é a prova do quanto seu acompanhamento fez toda a diferença, agradeço também a Bárbara pois ela sempre me incentivou e quando eu falei que iria para a academia, mais que de pressa ela me passou seu contato. Sozinha eu não conseguiria sair de 32,51% de gordura para 24,71%. Esse resultado é fruto da minha dedicação junto com o seu trabalho. Essa conquista também é sua pois sem a sua ajuda eu não teria conseguido 💪🍑🚀",
-      image: storyRonara,
+      name: "Reila",
+      highlight: "-20kg",
+      testimonial: "Treinar com o Ronald tem sido uma das melhores decisões que já tomei. A evolução que tive nesse tempo foi absurda, tanto fisicamente quanto mentalmente. Ele não é só um personal, é um amigo, que tem a maior paciência do mundo e sabe como motivar de verdade. Cada treino é diferente, desafiador e adaptado pra minha realidade, o que faz toda a diferença. Treinar com alguém que acredita no seu potencial e te puxa pra ser melhor a cada dia é um privilégio. Sou muito grata por essa caminhada e por ter ao meu lado um profissional tão dedicado, que realmente se importa e vibra junto comigo.",
+      image: storyReila,
     },
-    null, // Placeholder
-    null, // Placeholder
+    {
+      name: "Valéria",
+      highlight: "-7,8% gordura",
+      testimonial: "Nunca gostei de academia e hoje não me imagino mais sem ela. Além do bem-estar, da saúde, a minha autoestima se aumentou bastante, pois depois que tive minha filha acabei me deixando de lado e foquei apenas em exercer meu papel de mãe. Ontem fui no Leandro e os resultados foram ótimos e isso me fez olhar para trás e reconhecer o quanto valeu a pena. Quero te agradecer de coração por esses 4 meses de trabalho incrível. Minha evolução é a prova do quanto seu acompanhamento fez toda a diferença, agradeço também a Bárbara pois ela sempre me incentivou e quando eu falei que iria para a academia, mais que de pressa ela me passou seu contato. Sozinha eu não conseguiria sair de 32,51% de gordura para 24,71%. Esse resultado é fruto da minha dedicação junto com o seu trabalho. Essa conquista também é sua pois sem a sua ajuda eu não teria conseguido 💪🍑🚀",
+      image: storyValeria,
+    },
+    {
+      name: "Mari",
+      highlight: "-10kg",
+      testimonial: "2 Anos de Consultoria Blade",
+      image: storyMari,
+    },
   ];
 
   return (
@@ -61,71 +73,48 @@ const SuccessStoriesSection = () => {
               key={index}
               className="group overflow-hidden rounded-lg md:rounded-xl border-2 border-border/50 hover:border-primary/50 transition-all duration-300 bg-card"
             >
-              {story ? (
-                <>
-                  {/* Photo - No overlay */}
-                  <div className="relative aspect-[3/4] overflow-hidden">
-                    <img
-                      src={story.image}
-                      alt={story.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    
-                    {/* Highlight Badge */}
-                    <div className="absolute top-2 right-2 md:top-3 md:right-3 bg-primary text-primary-foreground font-display text-sm md:text-xl lg:text-2xl px-2 py-0.5 md:px-3 md:py-1 rounded-md md:rounded-lg">
-                      {story.highlight}
-                    </div>
-                  </div>
-
-                  {/* Info below photo */}
-                  <div className="p-3 md:p-4">
-                    <h3 className="font-display text-sm sm:text-base md:text-lg lg:text-xl text-foreground mb-1 md:mb-2">
-                      {story.name}
-                    </h3>
-                    
-                    {/* Weight and Date Info */}
-                    {story.weightBefore && story.weightAfter && (
-                      <div className="flex items-center gap-2 mb-1 text-[10px] sm:text-xs">
-                        <span className="text-foreground/60">{story.weightBefore}</span>
-                        <span className="text-primary">→</span>
-                        <span className="text-primary font-semibold">{story.weightAfter}</span>
-                      </div>
-                    )}
-                    {story.dateBefore && story.dateAfter && (
-                      <div className="flex items-center gap-2 mb-2 md:mb-3 text-[9px] sm:text-[10px]">
-                        <span className="text-foreground/50">{story.dateBefore}</span>
-                        <span className="text-foreground/50">|</span>
-                        <span className="text-foreground/50">{story.dateAfter}</span>
-                      </div>
-                    )}
-                    
-                    <p className="text-foreground/70 text-[10px] sm:text-xs md:text-sm">
-                      {story.testimonial}
-                    </p>
-                  </div>
-                </>
-              ) : (
-                /* Photo Placeholder */
-                <div className="aspect-[3/4] overflow-hidden bg-card flex items-center justify-center">
-                  <div className="text-muted-foreground/30 text-center">
-                    <svg
-                      className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
-                  </div>
+              {/* Photo - No overlay */}
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <img
+                  src={story.image}
+                  alt={story.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                
+                {/* Highlight Badge */}
+                <div className="absolute top-2 right-2 md:top-3 md:right-3 bg-primary text-primary-foreground font-display text-sm md:text-xl lg:text-2xl px-2 py-0.5 md:px-3 md:py-1 rounded-md md:rounded-lg">
+                  {story.highlight}
                 </div>
-              )}
+              </div>
+
+              {/* Info below photo */}
+              <div className="p-3 md:p-4">
+                <h3 className="font-display text-sm sm:text-base md:text-lg lg:text-xl text-foreground mb-1 md:mb-2">
+                  {story.name}
+                </h3>
+                
+                {/* Weight and Date Info */}
+                {story.weightBefore && story.weightAfter && (
+                  <div className="flex items-center gap-2 mb-1 text-[10px] sm:text-xs">
+                    <span className="text-foreground/60">{story.weightBefore}</span>
+                    <span className="text-primary">→</span>
+                    <span className="text-primary font-semibold">{story.weightAfter}</span>
+                  </div>
+                )}
+                {story.dateBefore && story.dateAfter && (
+                  <div className="flex items-center gap-2 mb-2 md:mb-3 text-[9px] sm:text-[10px]">
+                    <span className="text-foreground/50">{story.dateBefore}</span>
+                    <span className="text-foreground/50">|</span>
+                    <span className="text-foreground/50">{story.dateAfter}</span>
+                  </div>
+                )}
+                
+                <p className="text-foreground/70 text-[10px] sm:text-xs md:text-sm">
+                  {story.testimonial}
+                </p>
+              </div>
             </div>
           ))}
         </div>
