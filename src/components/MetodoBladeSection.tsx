@@ -38,7 +38,7 @@ const MetodoBladeSection = () => {
           <span className="text-primary font-medium tracking-widest text-sm mb-4 block uppercase">
             A metodologia
           </span>
-          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl text-gradient-neon mb-8 leading-none">
+          <h2 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-gradient-neon mb-8 leading-none">
             O MÉTODO BLADE
           </h2>
           <p className="text-foreground/80 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
