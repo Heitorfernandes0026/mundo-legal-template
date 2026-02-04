@@ -32,16 +32,16 @@ const MetodoBladeSection = () => {
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
 
-      <div className="container mx-auto px-6 py-24 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 py-16 md:py-24 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-primary font-medium tracking-widest text-sm mb-4 block uppercase">
+        <div className="text-center mb-10 md:mb-16">
+          <span className="text-primary font-medium tracking-widest text-xs md:text-sm mb-3 md:mb-4 block uppercase">
             A metodologia
           </span>
-          <h2 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-gradient-neon mb-8 leading-none">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gradient-neon mb-6 md:mb-8 leading-none">
             O MÉTODO BLADE
           </h2>
-          <p className="text-foreground/80 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+          <p className="text-foreground/80 text-sm md:text-base lg:text-lg leading-relaxed max-w-3xl mx-auto px-2">
             Ele nasceu da prática, não de teoria. De anos atendendo pessoas diferentes e 
             percebendo um padrão muito claro: a maioria não falha porque não se esforça, 
             ela falha porque não tem <span className="text-primary font-semibold">método</span>, 
@@ -51,26 +51,26 @@ const MetodoBladeSection = () => {
         </div>
 
         {/* Pilares subtitle */}
-        <div className="text-center mb-12">
-          <h3 className="font-display text-2xl md:text-3xl text-foreground mb-2">
+        <div className="text-center mb-8 md:mb-12">
+          <h3 className="font-display text-xl sm:text-2xl md:text-3xl text-foreground mb-2">
             O Método Blade possui <span className="text-primary">3 pilares</span>:
           </h3>
         </div>
 
         {/* Pilares Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12 md:mb-16">
           {pilares.map((pilar) => (
             <div
               key={pilar.numero}
-              className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-8 hover:border-primary/50 transition-colors duration-300"
+              className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 md:p-8 hover:border-primary/50 transition-colors duration-300"
             >
-              <span className="font-display text-5xl text-primary/30 mb-4 block">
+              <span className="font-display text-4xl md:text-5xl text-primary/30 mb-3 md:mb-4 block">
                 {pilar.numero}
               </span>
-              <h4 className="font-display text-xl md:text-2xl text-foreground mb-4">
+              <h4 className="font-display text-lg md:text-xl lg:text-2xl text-foreground mb-3 md:mb-4">
                 {pilar.titulo}
               </h4>
-              <p className="text-foreground/70 text-sm md:text-base leading-relaxed">
+              <p className="text-foreground/70 text-xs sm:text-sm md:text-base leading-relaxed">
                 {pilar.descricao}
               </p>
             </div>
@@ -78,14 +78,14 @@ const MetodoBladeSection = () => {
         </div>
 
         {/* Quote */}
-        <div className="text-center max-w-4xl mx-auto border-t border-border/30 pt-12">
+        <div className="text-center max-w-4xl mx-auto border-t border-border/30 pt-8 md:pt-12 px-2">
           <blockquote className="relative">
-            <span className="text-primary text-6xl font-display absolute -top-8 left-0 opacity-30">"</span>
-            <p className="text-foreground/90 text-lg md:text-xl lg:text-2xl leading-relaxed italic pl-8 pr-8">
+            <span className="text-primary text-4xl md:text-6xl font-display absolute -top-6 md:-top-8 left-0 opacity-30">"</span>
+            <p className="text-foreground/90 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed italic pl-6 pr-4 md:pl-8 md:pr-8">
               O que diferencia o Método Blade do que existe hoje no mercado é exatamente isso:
               <span className="text-primary font-semibold not-italic"> a maioria dos profissionais entrega treino; eu entrego processo.</span>
             </p>
-            <footer className="mt-6 text-foreground/60 text-sm uppercase tracking-widest">
+            <footer className="mt-4 md:mt-6 text-foreground/60 text-xs md:text-sm uppercase tracking-widest">
               — Ronald Blade
             </footer>
           </blockquote>

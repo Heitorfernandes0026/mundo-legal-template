@@ -44,7 +44,7 @@ const PlansSection = () => {
   ];
 
   return (
-    <section id="planos" className="relative py-24 overflow-hidden">
+    <section id="planos" className="relative py-16 md:py-24 overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -53,67 +53,67 @@ const PlansSection = () => {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-background/90" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-primary font-medium tracking-widest text-sm mb-4 block uppercase">
+        <div className="text-center mb-10 md:mb-16">
+          <span className="text-primary font-medium tracking-widest text-xs md:text-sm mb-3 md:mb-4 block uppercase">
             Escolha seu plano
           </span>
-          <h2 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-gradient-neon mb-6 leading-none">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gradient-neon mb-4 md:mb-6 leading-none px-2">
             PLANOS DA CONSULTORIA BLADE
           </h2>
-          <p className="text-foreground/70 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-foreground/70 text-sm md:text-base lg:text-lg max-w-2xl mx-auto px-2">
             Cada plano foi pensado para um momento diferente da sua jornada.
           </p>
         </div>
 
         {/* Plans Grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl p-8 transition-all duration-300 flex flex-col ${
+              className={`relative rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 transition-all duration-300 flex flex-col ${
                 plan.highlighted
-                  ? "bg-primary/10 border-2 border-primary md:scale-105"
+                  ? "bg-primary/10 border-2 border-primary sm:scale-100 md:scale-105"
                   : "bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50"
               }`}
             >
               {/* Popular badge */}
               {plan.highlighted && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full uppercase tracking-wider">
+                <div className="absolute -top-3 md:-top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[10px] md:text-xs font-semibold px-3 md:px-4 py-0.5 md:py-1 rounded-full uppercase tracking-wider whitespace-nowrap">
                   Mais popular
                 </div>
               )}
 
               {/* Plan Header */}
-              <div className="text-center mb-6">
-                <h3 className="font-display font-bold text-2xl md:text-3xl text-gradient-neon mb-4">
+              <div className="text-center mb-4 md:mb-6">
+                <h3 className="font-display font-bold text-xl sm:text-2xl md:text-3xl text-gradient-neon mb-3 md:mb-4">
                   {plan.name}
                 </h3>
-                <p className="text-primary font-medium text-sm uppercase tracking-wider mb-4">
+                <p className="text-primary font-medium text-xs md:text-sm uppercase tracking-wider mb-3 md:mb-4">
                   {plan.subtitle}
                 </p>
-                <p className="text-foreground/70 text-sm leading-relaxed">
+                <p className="text-foreground/70 text-xs md:text-sm leading-relaxed">
                   {plan.description}
                 </p>
               </div>
 
               {/* Divider */}
-              <div className="h-px bg-border/50 mb-6" />
+              <div className="h-px bg-border/50 mb-4 md:mb-6" />
 
               {/* Features */}
-              <ul className="space-y-3 mb-8 flex-grow">
+              <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8 flex-grow">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/80 text-sm">{feature}</span>
+                  <li key={feature} className="flex items-start gap-2 md:gap-3">
+                    <Check className="w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground/80 text-xs md:text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               {/* CTA Button */}
               <button
-                className={`w-full py-4 rounded-lg font-semibold transition-all duration-300 ${
+                className={`w-full py-3 md:py-4 rounded-lg font-semibold transition-all duration-300 text-sm md:text-base ${
                   plan.highlighted
                     ? "bg-primary text-primary-foreground hover:bg-primary/90 neon-glow"
                     : "bg-card border border-primary/50 text-primary hover:bg-primary/10"
@@ -126,7 +126,7 @@ const PlansSection = () => {
         </div>
 
         {/* Footer note */}
-        <p className="text-center text-foreground/50 text-sm mt-12">
+        <p className="text-center text-foreground/50 text-xs md:text-sm mt-8 md:mt-12 px-2">
           Tem dúvidas sobre qual plano escolher? Entre em contato para uma
           análise personalizada.
         </p>
