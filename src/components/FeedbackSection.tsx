@@ -72,7 +72,7 @@ const FeedbackSection = () => {
     },
     {
       videoSrc: "/feedback-video-2.mp4",
-      studentName: "Aluno - Mentoria Blade",
+      studentName: "Aluna Bárbara - Mentoria Blade",
     },
   ];
 
