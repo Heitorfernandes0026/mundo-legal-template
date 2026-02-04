@@ -4,6 +4,7 @@ import MetodoBladeSection from "@/components/MetodoBladeSection";
 import AboutSection from "@/components/AboutSection";
 import SuccessStoriesSection from "@/components/SuccessStoriesSection";
 import FeedbackSection from "@/components/FeedbackSection";
+import MarqueeBanner from "@/components/MarqueeBanner";
 import PlansSection from "@/components/PlansSection";
 import PartnersBar from "@/components/PartnersBar";
 
@@ -16,6 +17,7 @@ const Index = () => {
       <AboutSection />
       <SuccessStoriesSection />
       <FeedbackSection />
+      <MarqueeBanner />
       <PlansSection />
       <PartnersBar />
     </div>
