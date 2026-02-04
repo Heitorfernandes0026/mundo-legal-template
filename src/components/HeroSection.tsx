@@ -78,14 +78,25 @@ const HeroSection = () => {
             {/* CTAs */}
             <div className="flex gap-4">
               <Button variant="neon" size="lg" className="gap-2">
-                Get Started
+                Quero o Método Blade
                 <ArrowUpRight className="w-4 h-4" />
               </Button>
               <Button variant="outline" size="lg" className="border-foreground/20 text-foreground hover:bg-foreground/5">
-                Explore More
+                Saber Mais
               </Button>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Faixa amarela contínua */}
+      <div className="absolute bottom-0 left-0 right-0 bg-primary py-3 overflow-hidden">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {[...Array(10)].map((_, i) => (
+            <span key={i} className="mx-8 text-primary-foreground font-display text-lg tracking-wider">
+              RONALD BLADE | PERSONAL TRAINER
+            </span>
+          ))}
         </div>
       </div>
     </section>
