@@ -28,14 +28,14 @@ const HeroSection = () => {
         >
           <path
             d="M400 100 C600 100, 700 300, 700 400 C700 500, 600 700, 400 700"
-            stroke="hsl(72 100% 50%)"
+            stroke="hsl(50 100% 50%)"
             strokeWidth="3"
             fill="none"
             className="animate-pulse-neon"
           />
           <path
             d="M350 150 C550 150, 650 320, 650 400 C650 480, 550 650, 350 650"
-            stroke="hsl(72 100% 50%)"
+            stroke="hsl(50 100% 50%)"
             strokeWidth="2"
             fill="none"
             opacity="0.5"
@@ -47,12 +47,6 @@ const HeroSection = () => {
         <div className="flex items-center min-h-[80vh]">
           {/* Left content - Text aligned to the left */}
           <div className="space-y-8 text-left max-w-xl">
-            {/* Trainer Name */}
-            <div className="font-display text-6xl md:text-7xl lg:text-8xl tracking-widest">
-              <span className="text-foreground">RONALD BLADE</span>
-              <span className="text-primary"> |</span>
-            </div>
-
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl leading-none tracking-wide">
               <span className="text-gradient-neon">RESULTADOS REAIS</span>
               <br />
