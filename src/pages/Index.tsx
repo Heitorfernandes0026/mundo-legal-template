@@ -6,6 +6,7 @@ import SuccessStoriesSection from "@/components/SuccessStoriesSection";
 import FeedbackSection from "@/components/FeedbackSection";
 import MarqueeBanner from "@/components/MarqueeBanner";
 import PlansSection from "@/components/PlansSection";
+import FAQSection from "@/components/FAQSection";
 import PartnersBar from "@/components/PartnersBar";
 
 const Index = () => {
@@ -19,6 +20,7 @@ const Index = () => {
       <FeedbackSection />
       <MarqueeBanner />
       <PlansSection />
+      <FAQSection />
       <PartnersBar />
     </div>
   );
