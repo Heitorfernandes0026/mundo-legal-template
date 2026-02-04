@@ -87,7 +87,7 @@ const PlansSection = () => {
 
               {/* Plan Header */}
               <div className="text-center mb-6">
-                <h3 className="font-display text-3xl md:text-4xl text-gradient-neon mb-2">
+                <h3 className="font-display font-bold text-2xl md:text-3xl text-gradient-neon mb-4">
                   {plan.name}
                 </h3>
                 <p className="text-primary font-medium text-sm uppercase tracking-wider mb-4">
