@@ -53,12 +53,12 @@ const SuccessStoriesSection = () => {
           {stories.map((story, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg md:rounded-xl border-2 border-border/50 hover:border-primary/50 transition-all duration-300"
+              className="group overflow-hidden rounded-lg md:rounded-xl border-2 border-border/50 hover:border-primary/50 transition-all duration-300 bg-card"
             >
               {story ? (
                 <>
-                  {/* Photo */}
-                  <div className="aspect-[3/4] overflow-hidden bg-card">
+                  {/* Photo - No overlay */}
+                  <div className="relative aspect-[3/4] overflow-hidden">
                     <img
                       src={story.image}
                       alt={story.name}
@@ -66,35 +66,32 @@ const SuccessStoriesSection = () => {
                       loading="lazy"
                       decoding="async"
                     />
+                    
+                    {/* Highlight Badge */}
+                    <div className="absolute top-2 right-2 md:top-3 md:right-3 bg-primary text-primary-foreground font-display text-sm md:text-xl lg:text-2xl px-2 py-0.5 md:px-3 md:py-1 rounded-md md:rounded-lg">
+                      {story.highlight}
+                    </div>
                   </div>
 
-                  {/* Overlay with info */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-                  
-                  {/* Highlight Badge */}
-                  <div className="absolute top-2 right-2 md:top-3 md:right-3 bg-primary text-primary-foreground font-display text-sm md:text-xl lg:text-2xl px-2 py-0.5 md:px-3 md:py-1 rounded-md md:rounded-lg">
-                    {story.highlight}
-                  </div>
-
-                  {/* Info at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
+                  {/* Info below photo */}
+                  <div className="p-3 md:p-4">
                     <h3 className="font-display text-sm sm:text-base md:text-lg lg:text-xl text-foreground mb-1 md:mb-2">
                       {story.name}
                     </h3>
                     
                     {/* Weight and Date Info */}
-                    <div className="flex items-center gap-2 mb-1 md:mb-2 text-[10px] sm:text-xs">
+                    <div className="flex items-center gap-2 mb-1 text-[10px] sm:text-xs">
                       <span className="text-foreground/60">{story.weightBefore}</span>
                       <span className="text-primary">→</span>
                       <span className="text-primary font-semibold">{story.weightAfter}</span>
                     </div>
-                    <div className="flex items-center gap-2 mb-1 md:mb-2 text-[9px] sm:text-[10px]">
+                    <div className="flex items-center gap-2 mb-2 md:mb-3 text-[9px] sm:text-[10px]">
                       <span className="text-foreground/50">{story.dateBefore}</span>
                       <span className="text-foreground/50">|</span>
                       <span className="text-foreground/50">{story.dateAfter}</span>
                     </div>
                     
-                    <p className="text-foreground/70 text-[10px] sm:text-xs md:text-sm line-clamp-2">
+                    <p className="text-foreground/70 text-[10px] sm:text-xs md:text-sm">
                       {story.testimonial}
                     </p>
                   </div>
