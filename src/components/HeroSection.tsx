@@ -54,8 +54,8 @@ const HeroSection = () => {
               <span className="text-foreground">TREINO, </span>
               <span className="text-gradient-neon">O SISTEMA</span>
               <br />
-              <span className="text-gradient-neon">DE </span>
-              <span className="text-foreground">EVOLUÇÃO</span>
+              <span className="text-foreground">DE </span>
+              <span className="text-gradient-neon">EVOLUÇÃO</span>
             </h1>
 
             <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
