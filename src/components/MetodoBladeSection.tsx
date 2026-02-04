@@ -1,6 +1,10 @@
+import { useRef, useEffect, useState } from "react";
 import metodoBackground from "@/assets/metodo-blade-bg.jpeg";
 
 const MetodoBladeSection = () => {
+  const [bgLoaded, setBgLoaded] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
   const pilares = [
     {
       numero: "01",
@@ -22,11 +26,31 @@ const MetodoBladeSection = () => {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const img = new Image();
+          img.src = metodoBackground;
+          img.onload = () => setBgLoaded(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="metodo" className="relative min-h-screen overflow-hidden">
+    <section ref={sectionRef} id="metodo" className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500 ${bgLoaded ? "opacity-100" : "opacity-0"}`}
         style={{ backgroundImage: `url(${metodoBackground})` }}
       />
       {/* Dark overlay for text readability */}

@@ -1,10 +1,31 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Play } from "lucide-react";
-import feedbackVideo from "@/assets/feedback-osmar.mp4";
 
 const FeedbackSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Lazy load video when section comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoadVideo(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const handlePlay = () => {
     if (videoRef.current) {
@@ -14,7 +35,7 @@ const FeedbackSection = () => {
   };
 
   return (
-    <section id="feedback" className="relative py-16 md:py-24 bg-background overflow-hidden">
+    <section ref={sectionRef} id="feedback" className="relative py-16 md:py-24 bg-background overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/5 rounded-full blur-3xl" />
 
@@ -33,19 +54,25 @@ const FeedbackSection = () => {
         <div className="max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto">
           {/* Video with yellow frame */}
           <div className="relative p-1.5 md:p-2 bg-primary rounded-xl md:rounded-2xl">
-            <video
-              ref={videoRef}
-              src={feedbackVideo}
-              controls={isPlaying}
-              className="w-full rounded-lg md:rounded-xl"
-              playsInline
-              onPlay={() => setIsPlaying(true)}
-              onPause={() => setIsPlaying(false)}
-              onEnded={() => setIsPlaying(false)}
-            />
+            {shouldLoadVideo ? (
+              <video
+                ref={videoRef}
+                src="/feedback-osmar.mp4"
+                controls={isPlaying}
+                className={`w-full rounded-lg md:rounded-xl transition-opacity duration-300 ${isVideoLoaded ? "opacity-100" : "opacity-50"}`}
+                playsInline
+                preload="metadata"
+                onLoadedData={() => setIsVideoLoaded(true)}
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onEnded={() => setIsPlaying(false)}
+              />
+            ) : (
+              <div className="w-full aspect-video rounded-lg md:rounded-xl bg-background/50 animate-pulse" />
+            )}
             
             {/* Play Button Overlay */}
-            {!isPlaying && (
+            {!isPlaying && shouldLoadVideo && (
               <button
                 onClick={handlePlay}
                 className="absolute inset-1.5 md:inset-2 flex items-center justify-center bg-background/40 rounded-lg md:rounded-xl transition-all duration-300 hover:bg-background/30 group"
