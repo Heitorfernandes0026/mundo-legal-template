@@ -66,8 +66,8 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-8 relative z-10">
-        <div className="flex items-start min-h-[70vh] md:min-h-[80vh] pt-8 md:pt-12">
+      <div className="container mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-8 relative z-10 flex flex-col min-h-[calc(100vh-48px)]">
+        <div className="flex items-start flex-1 pt-8 md:pt-12">
           {/* Left content - Text aligned to the left */}
           <div className="space-y-6 md:space-y-8 text-left max-w-xl">
             <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none tracking-wide">
@@ -97,18 +97,18 @@ const HeroSection = () => {
                 </div>
               ))}
             </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 md:mt-8">
-              <Button variant="neon" size="lg" className="gap-2 text-sm md:text-base">
-                Quero o Método Blade
-                <ArrowUpRight className="w-4 h-4" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-foreground/20 text-foreground hover:bg-foreground/5 text-sm md:text-base">
-                Saber Mais
-              </Button>
-            </div>
           </div>
+        </div>
+
+        {/* CTAs - Positioned at bottom of hero */}
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pb-16 md:pb-20">
+          <Button variant="neon" size="lg" className="gap-2 text-sm md:text-base">
+            Quero o Método Blade
+            <ArrowUpRight className="w-4 h-4" />
+          </Button>
+          <Button variant="outline" size="lg" className="border-foreground/20 text-foreground hover:bg-foreground/5 text-sm md:text-base">
+            Saber Mais
+          </Button>
         </div>
       </div>
 
