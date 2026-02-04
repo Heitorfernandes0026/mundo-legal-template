@@ -112,16 +112,6 @@ const FAQSection = () => {
             </div>
           ))}
         </div>
-
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <p className="text-foreground/60 text-sm mb-4">
-            Ainda tem dúvidas? Entre em contato diretamente.
-          </p>
-          <button className="bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors duration-300 neon-glow">
-            Falar com Ronald
-          </button>
-        </div>
       </div>
     </section>
   );
