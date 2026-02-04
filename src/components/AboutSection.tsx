@@ -33,7 +33,7 @@ const AboutSection = () => {
         style={{ backgroundImage: `url(${aboutBackground})` }}
       />
       {/* Gradient overlay for text readability - responsive */}
-      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-background via-background/90 md:via-background/80 to-background/60 md:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-background via-background/80 md:via-background/60 to-background/30 md:to-transparent" />
       
       <div className="container mx-auto px-4 md:px-6 py-16 md:py-24 relative z-10 flex flex-col md:flex-row md:justify-end items-end md:items-start">
         <div className="max-w-xl text-left md:text-right">
