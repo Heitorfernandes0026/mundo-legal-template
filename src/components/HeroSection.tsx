@@ -10,14 +10,14 @@ const stats = [
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden pt-20">
-      {/* Background Image - Full visibility */}
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Background Image - Full visibility, starting below navbar */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 top-16 bg-cover bg-top bg-no-repeat"
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       {/* Gradient overlay only on the left side for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
+      <div className="absolute inset-0 top-16 bg-gradient-to-r from-background via-background/60 to-transparent" />
       
       {/* Neon curved lines decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -43,7 +43,7 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-6 pt-16 pb-8 relative z-10">
+      <div className="container mx-auto px-6 pt-24 pb-8 relative z-10">
         <div className="flex items-center min-h-[80vh]">
           {/* Left content - Text aligned to the left */}
           <div className="space-y-8 text-left max-w-xl">
