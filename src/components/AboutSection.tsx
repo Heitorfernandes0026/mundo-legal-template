@@ -28,6 +28,28 @@ const AboutSection = () => {
             baseado em ciência e estratégia, fugindo do "achismo".
           </p>
           
+          <div className="mb-8">
+            <p className="text-foreground/80 text-sm md:text-base font-medium mb-4">No meu método:</p>
+            <ul className="space-y-3 text-foreground/70 text-sm md:text-base">
+              <li className="flex items-start gap-3">
+                <span className="text-primary mt-1">–</span>
+                <span>cada aluno tem um <span className="text-primary font-semibold">treino individual</span></span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary mt-1">–</span>
+                <span>cada ajuste tem um <span className="text-primary font-semibold">motivo claro</span></span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary mt-1">–</span>
+                <span>cada decisão é baseada em <span className="text-primary font-semibold">dados e observação</span></span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary mt-1">–</span>
+                <span>o acompanhamento faz parte do serviço, <span className="text-primary font-semibold">não é extra</span></span>
+              </li>
+            </ul>
+          </div>
+          
           <p className="text-foreground/70 text-sm md:text-base leading-relaxed">
             Aqui, não entregamos apenas treinos, mas um sistema completo de acompanhamento 
             para quem busca alta performance e uma mudança estética definitiva.
