@@ -1,12 +1,80 @@
 import { useState, useRef, useEffect } from "react";
 import { Play } from "lucide-react";
 
-const FeedbackSection = () => {
+interface VideoCardProps {
+  videoSrc: string;
+  studentName: string;
+  shouldLoad: boolean;
+}
+
+const VideoCard = ({ videoSrc, studentName, shouldLoad }: VideoCardProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  return (
+    <div className="flex-1">
+      {/* Video with yellow frame */}
+      <div className="relative p-1.5 md:p-2 bg-primary rounded-xl md:rounded-2xl">
+        {shouldLoad ? (
+          <video
+            ref={videoRef}
+            src={videoSrc}
+            controls={isPlaying}
+            className={`w-full rounded-lg md:rounded-xl transition-opacity duration-300 ${isVideoLoaded ? "opacity-100" : "opacity-50"}`}
+            playsInline
+            preload="metadata"
+            onLoadedData={() => setIsVideoLoaded(true)}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+            onEnded={() => setIsPlaying(false)}
+          />
+        ) : (
+          <div className="w-full aspect-video rounded-lg md:rounded-xl bg-background/50 animate-pulse" />
+        )}
+        
+        {/* Play Button Overlay */}
+        {!isPlaying && shouldLoad && (
+          <button
+            onClick={handlePlay}
+            className="absolute inset-1.5 md:inset-2 flex items-center justify-center bg-background/40 rounded-lg md:rounded-xl transition-all duration-300 hover:bg-background/30 group"
+          >
+            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-primary flex items-center justify-center neon-glow transition-transform duration-300 group-hover:scale-110">
+              <Play className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground ml-0.5" fill="currentColor" />
+            </div>
+          </button>
+        )}
+      </div>
+
+      {/* Student Name */}
+      <p className="text-center text-foreground/80 text-xs sm:text-sm md:text-base lg:text-lg mt-3 md:mt-4 font-medium">
+        {studentName}
+      </p>
+    </div>
+  );
+};
+
+const FeedbackSection = () => {
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const videos = [
+    {
+      videoSrc: "/feedback-osmar.mp4",
+      studentName: "Aluno Osmar Colen - Mentoria Blade Presencial",
+    },
+    {
+      videoSrc: "/feedback-video-2.mp4",
+      studentName: "Aluno - Mentoria Blade",
+    },
+  ];
 
   // Lazy load video when section comes into view
   useEffect(() => {
@@ -27,13 +95,6 @@ const FeedbackSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
-  };
-
   return (
     <section ref={sectionRef} id="feedback" className="relative py-16 md:py-24 bg-background overflow-hidden">
       {/* Background decoration */}
@@ -50,44 +111,18 @@ const FeedbackSection = () => {
           </h2>
         </div>
 
-        {/* Video Container */}
-        <div className="max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto">
-          {/* Video with yellow frame */}
-          <div className="relative p-1.5 md:p-2 bg-primary rounded-xl md:rounded-2xl">
-            {shouldLoadVideo ? (
-              <video
-                ref={videoRef}
-                src="/feedback-osmar.mp4"
-                controls={isPlaying}
-                className={`w-full rounded-lg md:rounded-xl transition-opacity duration-300 ${isVideoLoaded ? "opacity-100" : "opacity-50"}`}
-                playsInline
-                preload="metadata"
-                onLoadedData={() => setIsVideoLoaded(true)}
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-                onEnded={() => setIsPlaying(false)}
+        {/* Videos Container - Side by Side */}
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8">
+            {videos.map((video, index) => (
+              <VideoCard
+                key={index}
+                videoSrc={video.videoSrc}
+                studentName={video.studentName}
+                shouldLoad={shouldLoadVideo}
               />
-            ) : (
-              <div className="w-full aspect-video rounded-lg md:rounded-xl bg-background/50 animate-pulse" />
-            )}
-            
-            {/* Play Button Overlay */}
-            {!isPlaying && shouldLoadVideo && (
-              <button
-                onClick={handlePlay}
-                className="absolute inset-1.5 md:inset-2 flex items-center justify-center bg-background/40 rounded-lg md:rounded-xl transition-all duration-300 hover:bg-background/30 group"
-              >
-                <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-primary flex items-center justify-center neon-glow transition-transform duration-300 group-hover:scale-110">
-                  <Play className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-primary-foreground ml-0.5 md:ml-1" fill="currentColor" />
-                </div>
-              </button>
-            )}
+            ))}
           </div>
-
-          {/* Student Name */}
-          <p className="text-center text-foreground/80 text-sm md:text-lg lg:text-xl mt-4 md:mt-6 font-medium">
-            Aluno Osmar Colen - Mentoria Blade Presencial
-          </p>
         </div>
       </div>
     </section>
