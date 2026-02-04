@@ -3,6 +3,10 @@ import storyLaunelina from "@/assets/story-launelina.jpeg";
 interface Story {
   name: string;
   highlight: string;
+  weightBefore: string;
+  weightAfter: string;
+  dateBefore: string;
+  dateAfter: string;
   testimonial: string;
   image: string;
 }
@@ -12,6 +16,10 @@ const SuccessStoriesSection = () => {
     {
       name: "Launelina",
       highlight: "-30kg",
+      weightBefore: "96kg",
+      weightAfter: "66kg",
+      dateBefore: "23/03/2023",
+      dateAfter: "25/01/2025",
       testimonial: "Dois anos de dedicação e 30kg a menos e uma nova versão de mim! Quando comecei essa jornada, não imaginava o quanto minha vida mudaria. Com o acompanhamento do Ronald Blade, aprendi que emagrecer vai muito além da balança – é sobre saúde, força e autoconfiança. Cada treino, cada dica alimentar, cada incentivo fizeram toda a diferença! Foram 30kg eliminados com muito trabalho e constância, e o resultado está aqui! Gratidão imensa por toda orientação, paciência e suporte. Se tem alguém que entende do assunto e sabe transformar vidas, é ele!",
       image: storyLaunelina,
     },
@@ -70,10 +78,23 @@ const SuccessStoriesSection = () => {
 
                   {/* Info at bottom */}
                   <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-                    <h3 className="font-display text-sm sm:text-base md:text-lg lg:text-xl text-foreground mb-0.5 md:mb-1">
+                    <h3 className="font-display text-sm sm:text-base md:text-lg lg:text-xl text-foreground mb-1 md:mb-2">
                       {story.name}
                     </h3>
-                    <p className="text-foreground/70 text-[10px] sm:text-xs md:text-sm line-clamp-3">
+                    
+                    {/* Weight and Date Info */}
+                    <div className="flex items-center gap-2 mb-1 md:mb-2 text-[10px] sm:text-xs">
+                      <span className="text-foreground/60">{story.weightBefore}</span>
+                      <span className="text-primary">→</span>
+                      <span className="text-primary font-semibold">{story.weightAfter}</span>
+                    </div>
+                    <div className="flex items-center gap-2 mb-1 md:mb-2 text-[9px] sm:text-[10px]">
+                      <span className="text-foreground/50">{story.dateBefore}</span>
+                      <span className="text-foreground/50">|</span>
+                      <span className="text-foreground/50">{story.dateAfter}</span>
+                    </div>
+                    
+                    <p className="text-foreground/70 text-[10px] sm:text-xs md:text-sm line-clamp-2">
                       {story.testimonial}
                     </p>
                   </div>
