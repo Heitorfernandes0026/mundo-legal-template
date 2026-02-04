@@ -59,7 +59,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
-              Estratégia, acompanhamento e evolução. Conheça o sistema estruturado 
+              Estratégia, acompanhamento e evolução. Conheça o sistema de treino estruturado 
               que vai levar seu corpo ao próximo nível.
             </p>
 
