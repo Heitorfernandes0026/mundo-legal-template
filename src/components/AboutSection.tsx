@@ -11,7 +11,7 @@ const AboutSection = () => {
       {/* Gradient overlay for text readability - from right */}
       <div className="absolute inset-0 bg-gradient-to-l from-background via-background/80 to-transparent" />
       
-      <div className="container mx-auto px-6 pt-48 md:pt-56 lg:pt-64 pb-24 relative z-10 flex justify-end">
+      <div className="container mx-auto px-6 py-24 relative z-10 flex justify-end">
         <div className="max-w-xl text-right">
           <span className="text-primary font-medium tracking-widest text-sm mb-4 block uppercase">
             Conheça o treinador
