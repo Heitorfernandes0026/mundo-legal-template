@@ -47,6 +47,12 @@ const HeroSection = () => {
         <div className="flex items-center min-h-[80vh]">
           {/* Left content - Text aligned to the left */}
           <div className="space-y-8 text-left max-w-xl">
+            {/* Trainer Name */}
+            <div className="font-display text-6xl md:text-7xl lg:text-8xl tracking-widest">
+              <span className="text-foreground">RONALD BLADE</span>
+              <span className="text-primary"> |</span>
+            </div>
+
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl leading-none tracking-wide">
               <span className="text-gradient-neon">RESULTADOS REAIS</span>
               <br />
