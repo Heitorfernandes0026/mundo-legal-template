@@ -99,7 +99,7 @@ const HeroSection = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 md:mt-8">
               <Button variant="neon" size="lg" className="gap-2 text-sm md:text-base">
                 Quero o Método Blade
                 <ArrowUpRight className="w-4 h-4" />
