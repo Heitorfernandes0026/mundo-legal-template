@@ -43,8 +43,8 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-6 pt-24 pb-8 relative z-10">
-        <div className="flex items-center min-h-[80vh]">
+      <div className="container mx-auto px-6 pt-32 pb-8 relative z-10">
+        <div className="flex items-start min-h-[80vh] pt-12">
           {/* Left content - Text aligned to the left */}
           <div className="space-y-8 text-left max-w-xl">
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl leading-none tracking-wide">
