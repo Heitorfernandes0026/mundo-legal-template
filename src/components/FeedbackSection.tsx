@@ -1,6 +1,18 @@
+import { useState, useRef } from "react";
+import { Play } from "lucide-react";
 import feedbackVideo from "@/assets/feedback-osmar.mp4";
 
 const FeedbackSection = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
   return (
     <section id="feedback" className="relative py-24 bg-background overflow-hidden">
       {/* Background decoration */}
@@ -22,11 +34,27 @@ const FeedbackSection = () => {
           {/* Video with yellow frame */}
           <div className="relative p-2 bg-primary rounded-2xl">
             <video
+              ref={videoRef}
               src={feedbackVideo}
-              controls
+              controls={isPlaying}
               className="w-full rounded-xl"
               playsInline
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              onEnded={() => setIsPlaying(false)}
             />
+            
+            {/* Play Button Overlay */}
+            {!isPlaying && (
+              <button
+                onClick={handlePlay}
+                className="absolute inset-2 flex items-center justify-center bg-background/40 rounded-xl transition-all duration-300 hover:bg-background/30 group"
+              >
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary flex items-center justify-center neon-glow transition-transform duration-300 group-hover:scale-110">
+                  <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1" fill="currentColor" />
+                </div>
+              </button>
+            )}
           </div>
 
           {/* Student Name */}
