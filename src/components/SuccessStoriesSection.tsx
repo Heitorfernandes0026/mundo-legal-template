@@ -1,12 +1,13 @@
 import storyLaunelina from "@/assets/story-launelina.jpeg";
+import storyRonara from "@/assets/story-ronara.jpeg";
 
 interface Story {
   name: string;
   highlight: string;
-  weightBefore: string;
-  weightAfter: string;
-  dateBefore: string;
-  dateAfter: string;
+  weightBefore?: string;
+  weightAfter?: string;
+  dateBefore?: string;
+  dateAfter?: string;
   testimonial: string;
   image: string;
 }
@@ -23,7 +24,12 @@ const SuccessStoriesSection = () => {
       testimonial: "Dois anos de dedicação e 30kg a menos e uma nova versão de mim! Quando comecei essa jornada, não imaginava o quanto minha vida mudaria. Com o acompanhamento do Ronald Blade, aprendi que emagrecer vai muito além da balança – é sobre saúde, força e autoconfiança. Cada treino, cada dica alimentar, cada incentivo fizeram toda a diferença! Foram 30kg eliminados com muito trabalho e constância, e o resultado está aqui! Gratidão imensa por toda orientação, paciência e suporte. Se tem alguém que entende do assunto e sabe transformar vidas, é ele!",
       image: storyLaunelina,
     },
-    null, // Placeholder
+    {
+      name: "Ronara",
+      highlight: "-33kg",
+      testimonial: "Nunca gostei de academia e hoje não me imagino mais sem ela. Além do bem-estar, da saúde, a minha autoestima se aumentou bastante, pois depois que tive minha filha acabei me deixando de lado e foquei apenas em exercer meu papel de mãe. Ontem fui no Leandro e os resultados foram ótimos e isso me fez olhar para trás e reconhecer o quanto valeu a pena. Quero te agradecer de coração por esses 4 meses de trabalho incrível. Minha evolução é a prova do quanto seu acompanhamento fez toda a diferença, agradeço também a Bárbara pois ela sempre me incentivou e quando eu falei que iria para a academia, mais que de pressa ela me passou seu contato. Sozinha eu não conseguiria sair de 32,51% de gordura para 24,71%. Esse resultado é fruto da minha dedicação junto com o seu trabalho. Essa conquista também é sua pois sem a sua ajuda eu não teria conseguido 💪🍑🚀",
+      image: storyRonara,
+    },
     null, // Placeholder
     null, // Placeholder
   ];
@@ -80,16 +86,20 @@ const SuccessStoriesSection = () => {
                     </h3>
                     
                     {/* Weight and Date Info */}
-                    <div className="flex items-center gap-2 mb-1 text-[10px] sm:text-xs">
-                      <span className="text-foreground/60">{story.weightBefore}</span>
-                      <span className="text-primary">→</span>
-                      <span className="text-primary font-semibold">{story.weightAfter}</span>
-                    </div>
-                    <div className="flex items-center gap-2 mb-2 md:mb-3 text-[9px] sm:text-[10px]">
-                      <span className="text-foreground/50">{story.dateBefore}</span>
-                      <span className="text-foreground/50">|</span>
-                      <span className="text-foreground/50">{story.dateAfter}</span>
-                    </div>
+                    {story.weightBefore && story.weightAfter && (
+                      <div className="flex items-center gap-2 mb-1 text-[10px] sm:text-xs">
+                        <span className="text-foreground/60">{story.weightBefore}</span>
+                        <span className="text-primary">→</span>
+                        <span className="text-primary font-semibold">{story.weightAfter}</span>
+                      </div>
+                    )}
+                    {story.dateBefore && story.dateAfter && (
+                      <div className="flex items-center gap-2 mb-2 md:mb-3 text-[9px] sm:text-[10px]">
+                        <span className="text-foreground/50">{story.dateBefore}</span>
+                        <span className="text-foreground/50">|</span>
+                        <span className="text-foreground/50">{story.dateAfter}</span>
+                      </div>
+                    )}
                     
                     <p className="text-foreground/70 text-[10px] sm:text-xs md:text-sm">
                       {story.testimonial}
