@@ -3,9 +3,9 @@ import { ArrowUpRight } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpeg";
 
 const stats = [
-  { value: "1200+", label: "Member" },
-  { value: "12+", label: "Trainer" },
-  { value: "20+", label: "Year Service" },
+  { value: "150+", label: "Vidas Transformadas" },
+  { value: "6+", label: "Anos de Experiência" },
+  { value: "50+", label: "Treinos de Alta Performance" },
 ];
 
 const HeroSection = () => {
@@ -93,7 +93,7 @@ const HeroSection = () => {
       <div className="absolute bottom-0 left-0 right-0 bg-primary py-3 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(10)].map((_, i) => (
-            <span key={i} className="mx-8 text-primary-foreground font-display text-lg tracking-wider">
+            <span key={i} className="mx-8 text-primary-foreground font-display text-lg tracking-wider font-bold">
               RONALD BLADE | PERSONAL TRAINER
             </span>
           ))}
