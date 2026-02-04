@@ -4,18 +4,20 @@ import aboutBackground from "@/assets/ronald-about.jpeg";
 const AboutSection = () => {
   const [bgLoaded, setBgLoaded] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const hasStartedLoading = useRef(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !hasStartedLoading.current) {
+          hasStartedLoading.current = true;
           const img = new Image();
           img.src = aboutBackground;
           img.onload = () => setBgLoaded(true);
           observer.disconnect();
         }
       },
-      { rootMargin: "200px" }
+      { rootMargin: "400px" } // Increased for earlier preload
     );
 
     if (sectionRef.current) {
@@ -27,9 +29,11 @@ const AboutSection = () => {
 
   return (
     <section ref={sectionRef} id="about" className="relative min-h-[60vh] md:min-h-[80vh] overflow-hidden">
+      {/* Background placeholder */}
+      <div className="absolute inset-0 bg-card" />
       {/* Background Image */}
       <div 
-        className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500 ${bgLoaded ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-300 ${bgLoaded ? "opacity-100" : "opacity-0"}`}
         style={{ backgroundImage: `url(${aboutBackground})` }}
       />
       {/* Gradient overlay for text readability - responsive */}

@@ -12,18 +12,31 @@ const stats = [
 const HeroSection = () => {
   const [bgLoaded, setBgLoaded] = useState(false);
 
-  // Preload hero background
+  // Preload hero background with high priority
   useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = heroBackground;
+    link.fetchPriority = "high";
+    document.head.appendChild(link);
+
     const img = new Image();
     img.src = heroBackground;
     img.onload = () => setBgLoaded(true);
+
+    return () => {
+      document.head.removeChild(link);
+    };
   }, []);
 
   return (
     <section className="relative min-h-screen overflow-hidden">
+      {/* Background placeholder */}
+      <div className="absolute inset-0 top-16 bg-card" />
       {/* Background Image - Full visibility, starting below navbar */}
       <div 
-        className={`absolute inset-0 top-16 bg-cover bg-top bg-no-repeat transition-opacity duration-500 ${bgLoaded ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 top-16 bg-cover bg-top bg-no-repeat transition-opacity duration-300 ${bgLoaded ? "opacity-100" : "opacity-0"}`}
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       {/* Gradient overlay only on the left side for text readability */}
