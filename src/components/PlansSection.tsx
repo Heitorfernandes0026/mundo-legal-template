@@ -7,12 +7,11 @@ const PlansSection = () => {
       name: "Blade Start",
       subtitle: "Comece certo",
       description:
-        "Para quem quer começar com direção. Ideal para quem está saindo do zero ou voltando a treinar e precisa de estrutura.",
+        "Esse plano é para quem quer começar certo. É direção inicial. A pessoa recebe avaliação completa, treino personalizado e acesso à plataforma. É ideal para quem está saindo do zero ou voltando a treinar e precisa de estrutura, não de acompanhamento contínuo ainda.",
       features: [
         "Avaliação completa",
         "Treino personalizado",
         "Acesso à plataforma",
-        "Direção inicial estruturada",
       ],
       highlighted: false,
     },
@@ -20,12 +19,11 @@ const PlansSection = () => {
       name: "Blade Confort",
       subtitle: "Acompanhamento estratégico",
       description:
-        "Constância, correção e evolução real. Esse plano existe para evitar estagnação e abandono.",
+        "Esse é o plano de acompanhamento estratégico. Aqui entra constância, correção e evolução real. O aluno recebe feedbacks semanais, acompanhamento do progresso, ajustes estratégicos quando necessário e reavaliação por fotos. Esse plano existe para evitar estagnação e abandono.",
       features: [
-        "Tudo do Blade Start",
         "Feedbacks semanais",
         "Acompanhamento do progresso",
-        "Ajustes estratégicos",
+        "Ajustes estratégicos quando necessário",
         "Reavaliação por fotos",
       ],
       highlighted: true,
@@ -34,9 +32,8 @@ const PlansSection = () => {
       name: "Blade Diamond",
       subtitle: "Acompanhamento premium",
       description:
-        "Evolução contínua de médio e longo prazo. Para quem entendeu que resultado vem da constância com direção.",
+        "Esse é o acompanhamento premium, pensado para médio e longo prazo. Aqui o foco é evolução contínua. O aluno tem ajustes periódicos de treino, acompanhamento constante, reavaliações recorrentes e análise profunda do histórico. É para quem já entendeu que resultado vem da constância com direção, não da troca constante de treino.",
       features: [
-        "Tudo do Blade Confort",
         "Ajustes periódicos de treino",
         "Acompanhamento constante",
         "Reavaliações recorrentes",
@@ -75,9 +72,9 @@ const PlansSection = () => {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl p-8 transition-all duration-300 ${
+              className={`relative rounded-2xl p-8 transition-all duration-300 flex flex-col ${
                 plan.highlighted
-                  ? "bg-primary/10 border-2 border-primary scale-105"
+                  ? "bg-primary/10 border-2 border-primary md:scale-105"
                   : "bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50"
               }`}
             >
@@ -105,7 +102,7 @@ const PlansSection = () => {
               <div className="h-px bg-border/50 mb-6" />
 
               {/* Features */}
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
