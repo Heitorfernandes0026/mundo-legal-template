@@ -1,9 +1,13 @@
+import { useRef, useEffect, useState } from "react";
 import story1 from "@/assets/story-1.jpeg";
 import story2 from "@/assets/story-2.jpeg";
 import story3 from "@/assets/story-3.jpeg";
 import story4 from "@/assets/story-4.jpeg";
 
 const SuccessStoriesSection = () => {
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
   const stories = [
     {
       name: "Lucas Mendes",
@@ -31,8 +35,26 @@ const SuccessStoriesSection = () => {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "100px" }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="historias" className="relative py-16 md:py-24 bg-card/30 overflow-hidden">
+    <section ref={sectionRef} id="historias" className="relative py-16 md:py-24 bg-card/30 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-32 md:w-64 h-32 md:h-64 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-48 md:w-96 h-48 md:h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -53,18 +75,24 @@ const SuccessStoriesSection = () => {
 
         {/* Stories Grid - Photos in Highlight */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6 mb-8 md:mb-12">
-          {stories.map((story) => (
+          {stories.map((story, index) => (
             <div
               key={story.name}
               className="group relative overflow-hidden rounded-lg md:rounded-xl border-2 border-primary/30 hover:border-primary transition-all duration-300"
             >
               {/* Photo */}
-              <div className="aspect-[3/4] overflow-hidden">
-                <img
-                  src={story.image}
-                  alt={story.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+              <div className="aspect-[3/4] overflow-hidden bg-card">
+                {isInView ? (
+                  <img
+                    src={story.image}
+                    alt={story.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-card animate-pulse" />
+                )}
               </div>
 
               {/* Overlay with info */}

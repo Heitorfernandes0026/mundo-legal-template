@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpeg";
@@ -9,11 +10,20 @@ const stats = [
 ];
 
 const HeroSection = () => {
+  const [bgLoaded, setBgLoaded] = useState(false);
+
+  // Preload hero background
+  useEffect(() => {
+    const img = new Image();
+    img.src = heroBackground;
+    img.onload = () => setBgLoaded(true);
+  }, []);
+
   return (
     <section className="relative min-h-screen overflow-hidden">
       {/* Background Image - Full visibility, starting below navbar */}
       <div 
-        className="absolute inset-0 top-16 bg-cover bg-top bg-no-repeat"
+        className={`absolute inset-0 top-16 bg-cover bg-top bg-no-repeat transition-opacity duration-500 ${bgLoaded ? "opacity-100" : "opacity-0"}`}
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       {/* Gradient overlay only on the left side for text readability */}

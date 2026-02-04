@@ -1,11 +1,35 @@
+import { useRef, useEffect, useState } from "react";
 import aboutBackground from "@/assets/ronald-about.jpeg";
 
 const AboutSection = () => {
+  const [bgLoaded, setBgLoaded] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const img = new Image();
+          img.src = aboutBackground;
+          img.onload = () => setBgLoaded(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="about" className="relative min-h-[60vh] md:min-h-[80vh] overflow-hidden">
+    <section ref={sectionRef} id="about" className="relative min-h-[60vh] md:min-h-[80vh] overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500 ${bgLoaded ? "opacity-100" : "opacity-0"}`}
         style={{ backgroundImage: `url(${aboutBackground})` }}
       />
       {/* Gradient overlay for text readability - responsive */}
