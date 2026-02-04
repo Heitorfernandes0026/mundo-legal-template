@@ -58,7 +58,7 @@ const MetodoBladeSection = () => {
         </div>
 
         {/* Pilares Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {pilares.map((pilar) => (
             <div
               key={pilar.numero}
@@ -75,6 +75,20 @@ const MetodoBladeSection = () => {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Quote */}
+        <div className="text-center max-w-4xl mx-auto border-t border-border/30 pt-12">
+          <blockquote className="relative">
+            <span className="text-primary text-6xl font-display absolute -top-8 left-0 opacity-30">"</span>
+            <p className="text-foreground/90 text-lg md:text-xl lg:text-2xl leading-relaxed italic pl-8 pr-8">
+              O que diferencia o Método Blade do que existe hoje no mercado é exatamente isso:
+              <span className="text-primary font-semibold not-italic"> a maioria dos profissionais entrega treino; eu entrego processo.</span>
+            </p>
+            <footer className="mt-6 text-foreground/60 text-sm uppercase tracking-widest">
+              — Ronald Blade
+            </footer>
+          </blockquote>
         </div>
       </div>
     </section>
