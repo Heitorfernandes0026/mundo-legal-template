@@ -5,6 +5,7 @@ import storyMari from "@/assets/story-mari.jpeg";
 
 interface Story {
   name: string;
+  subtitle?: string;
   highlight: string;
   weightBefore?: string;
   weightAfter?: string;
@@ -23,25 +24,27 @@ const SuccessStoriesSection = () => {
       weightAfter: "66kg",
       dateBefore: "23/03/2023",
       dateAfter: "25/01/2025",
-      testimonial: "Dois anos de dedicação e 30kg a menos e uma nova versão de mim! Quando comecei essa jornada, não imaginava o quanto minha vida mudaria. Com o acompanhamento do Ronald Blade, aprendi que emagrecer vai muito além da balança – é sobre saúde, força e autoconfiança. Cada treino, cada dica alimentar, cada incentivo fizeram toda a diferença! Foram 30kg eliminados com muito trabalho e constância, e o resultado está aqui! Gratidão imensa por toda orientação, paciência e suporte. Se tem alguém que entende do assunto e sabe transformar vidas, é ele!",
+      testimonial: "\"O meu Feedback não poderia ser melhor. Você é um profissional incrível, está desde o começo do meu processo de emagrecimento e hipertrofia comigo. Extremamente detalhista, tanto nos exércitos para trabalharmos músculos isolados, quanto na execução. Extremamente grata por nosso resultado em conjunto. Somos fodas 💪🏼👊🏼\"",
       image: storyLaunelina,
     },
     {
       name: "Reila",
+      subtitle: "8 Meses de Consultoria Blade",
       highlight: "-20kg",
-      testimonial: "Treinar com o Ronald tem sido uma das melhores decisões que já tomei. A evolução que tive nesse tempo foi absurda, tanto fisicamente quanto mentalmente. Ele não é só um personal, é um amigo, que tem a maior paciência do mundo e sabe como motivar de verdade. Cada treino é diferente, desafiador e adaptado pra minha realidade, o que faz toda a diferença. Treinar com alguém que acredita no seu potencial e te puxa pra ser melhor a cada dia é um privilégio. Sou muito grata por essa caminhada e por ter ao meu lado um profissional tão dedicado, que realmente se importa e vibra junto comigo.",
+      testimonial: "\"Treinar com o Ronald tem sido uma das melhores decisões que já tomei. A evolução que tive nesse tempo foi absurda, tanto fisicamente quanto mentalmente. Ele não é só um personal, é um amigo, que tem a maior paciência do mundo e sabe como motivar de verdade. Cada treino é diferente, desafiador e adaptado pra minha realidade, o que faz toda a diferença. Treinar com alguém que acredita no seu potencial e te puxa pra ser melhor a cada dia é um privilégio. Sou muito grata por essa caminhada e por ter ao meu lado um profissional tão dedicado, que realmente se importa e vibra junto comigo.\"",
       image: storyReila,
     },
     {
       name: "Valéria",
       highlight: "-7,8% gordura",
-      testimonial: "Nunca gostei de academia e hoje não me imagino mais sem ela. Além do bem-estar, da saúde, a minha autoestima se aumentou bastante, pois depois que tive minha filha acabei me deixando de lado e foquei apenas em exercer meu papel de mãe. Ontem fui no Leandro e os resultados foram ótimos e isso me fez olhar para trás e reconhecer o quanto valeu a pena. Quero te agradecer de coração por esses 4 meses de trabalho incrível. Minha evolução é a prova do quanto seu acompanhamento fez toda a diferença, agradeço também a Bárbara pois ela sempre me incentivou e quando eu falei que iria para a academia, mais que de pressa ela me passou seu contato. Sozinha eu não conseguiria sair de 32,51% de gordura para 24,71%. Esse resultado é fruto da minha dedicação junto com o seu trabalho. Essa conquista também é sua pois sem a sua ajuda eu não teria conseguido 💪🍑🚀",
+      testimonial: "\"Nunca gostei de academia e hoje não me imagino mais sem ela. Além do bem-estar, da saúde, a minha autoestima se aumentou bastante, pois depois que tive minha filha acabei me deixando de lado e foquei apenas em exercer meu papel de mãe. Ontem fui no Leandro e os resultados foram ótimos e isso me fez olhar para trás e reconhecer o quanto valeu a pena. Quero te agradecer de coração por esses 4 meses de trabalho incrível. Minha evolução é a prova do quanto seu acompanhamento fez toda a diferença, agradeço também a Bárbara pois ela sempre me incentivou e quando eu falei que iria para a academia, mais que de pressa ela me passou seu contato. Sozinha eu não conseguiria sair de 32,51% de gordura para 24,71%. Esse resultado é fruto da minha dedicação junto com o seu trabalho. Essa conquista também é sua pois sem a sua ajuda eu não teria conseguido 💪🍑🚀\"",
       image: storyValeria,
     },
     {
       name: "Mari",
+      subtitle: "2 Anos de Consultoria Blade",
       highlight: "-10kg",
-      testimonial: "2 Anos de Consultoria Blade",
+      testimonial: "\"2 Anos de Consultoria Blade\"",
       image: storyMari,
     },
   ];
@@ -83,17 +86,22 @@ const SuccessStoriesSection = () => {
                   decoding="async"
                 />
                 
-                {/* Highlight Badge */}
-                <div className="absolute top-2 right-2 md:top-3 md:right-3 bg-primary text-primary-foreground font-display text-sm md:text-xl lg:text-2xl px-2 py-0.5 md:px-3 md:py-1 rounded-md md:rounded-lg">
+                {/* Highlight Badge - Bottom Right */}
+                <div className="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-primary text-primary-foreground font-display text-sm md:text-xl lg:text-2xl px-2 py-0.5 md:px-3 md:py-1 rounded-md md:rounded-lg">
                   {story.highlight}
                 </div>
               </div>
 
               {/* Info below photo */}
               <div className="p-3 md:p-4">
-                <h3 className="font-display text-sm sm:text-base md:text-lg lg:text-xl text-foreground mb-1 md:mb-2">
+                <h3 className="font-display text-sm sm:text-base md:text-lg lg:text-xl text-foreground mb-0">
                   {story.name}
                 </h3>
+                {story.subtitle && (
+                  <p className="text-foreground/60 text-[10px] sm:text-xs mb-1 md:mb-2">
+                    {story.subtitle}
+                  </p>
+                )}
                 
                 {/* Weight and Date Info */}
                 {story.weightBefore && story.weightAfter && (
