@@ -22,7 +22,7 @@ const HeroSection = () => {
       {/* Neon curved lines decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <svg
-          className="absolute top-20 right-0 w-[800px] h-[800px] opacity-40"
+          className="absolute top-20 right-0 w-[400px] md:w-[800px] h-[400px] md:h-[800px] opacity-40"
           viewBox="0 0 800 800"
           fill="none"
         >
@@ -43,11 +43,11 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-6 pt-32 pb-8 relative z-10">
-        <div className="flex items-start min-h-[80vh] pt-12">
+      <div className="container mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-8 relative z-10">
+        <div className="flex items-start min-h-[70vh] md:min-h-[80vh] pt-8 md:pt-12">
           {/* Left content - Text aligned to the left */}
-          <div className="space-y-8 text-left max-w-xl">
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl leading-none tracking-wide">
+          <div className="space-y-6 md:space-y-8 text-left max-w-xl">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none tracking-wide">
               <span className="text-gradient-neon">MAIS QUE</span>
               <span className="text-foreground"> UM</span>
               <br />
@@ -58,30 +58,30 @@ const HeroSection = () => {
               <span className="text-gradient-neon">EVOLUÇÃO</span>
             </h1>
 
-            <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
+            <p className="text-muted-foreground max-w-md text-xs sm:text-sm leading-relaxed">
               Estratégia, acompanhamento e evolução. Conheça o sistema de treino estruturado 
               que vai levar seu corpo ao próximo nível.
             </p>
 
             {/* Stats */}
-            <div className="flex gap-8 py-4">
+            <div className="flex gap-4 sm:gap-6 md:gap-8 py-2 md:py-4">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-left">
-                  <div className="font-display text-3xl md:text-4xl text-foreground">
+                  <div className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl text-foreground">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-muted-foreground">{stat.label}</div>
+                  <div className="text-[10px] sm:text-xs text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
             </div>
 
             {/* CTAs */}
-            <div className="flex gap-4">
-              <Button variant="neon" size="lg" className="gap-2">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Button variant="neon" size="lg" className="gap-2 text-sm md:text-base">
                 Quero o Método Blade
                 <ArrowUpRight className="w-4 h-4" />
               </Button>
-              <Button variant="outline" size="lg" className="border-foreground/20 text-foreground hover:bg-foreground/5">
+              <Button variant="outline" size="lg" className="border-foreground/20 text-foreground hover:bg-foreground/5 text-sm md:text-base">
                 Saber Mais
               </Button>
             </div>
@@ -90,10 +90,10 @@ const HeroSection = () => {
       </div>
 
       {/* Faixa amarela contínua */}
-      <div className="absolute bottom-0 left-0 right-0 bg-primary py-3 overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 bg-primary py-2 md:py-3 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(10)].map((_, i) => (
-            <span key={i} className="mx-8 text-primary-foreground font-display text-lg tracking-wider font-bold">
+            <span key={i} className="mx-4 md:mx-8 text-primary-foreground font-display text-sm md:text-lg tracking-wider font-bold">
               RONALD BLADE | PERSONAL TRAINER
             </span>
           ))}
