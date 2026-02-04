@@ -36,6 +36,7 @@ const SuccessStoriesSection = () => {
     },
     {
       name: "Valéria",
+      subtitle: "32,51% de gordura para 24,71% em 4 meses",
       highlight: "-7,8% gordura",
       testimonial: "\"Nunca gostei de academia e hoje não me imagino mais sem ela. Além do bem-estar, da saúde, a minha autoestima se aumentou bastante, pois depois que tive minha filha acabei me deixando de lado e foquei apenas em exercer meu papel de mãe. Ontem fui no Leandro e os resultados foram ótimos e isso me fez olhar para trás e reconhecer o quanto valeu a pena. Quero te agradecer de coração por esses 4 meses de trabalho incrível. Minha evolução é a prova do quanto seu acompanhamento fez toda a diferença, agradeço também a Bárbara pois ela sempre me incentivou e quando eu falei que iria para a academia, mais que de pressa ela me passou seu contato. Sozinha eu não conseguiria sair de 32,51% de gordura para 24,71%. Esse resultado é fruto da minha dedicação junto com o seu trabalho. Essa conquista também é sua pois sem a sua ajuda eu não teria conseguido 💪🍑🚀\"",
       image: storyValeria,
@@ -44,7 +45,7 @@ const SuccessStoriesSection = () => {
       name: "Mari",
       subtitle: "2 Anos de Consultoria Blade",
       highlight: "-10kg",
-      testimonial: "\"2 Anos de Consultoria Blade\"",
+      testimonial: "\"O meu Feedback não poderia ser melhor. Você é um profissional incrível, está desde o começo do meu processo de emagrecimento e hipertrofia comigo. Extremamente detalhista, tanto nos exércitos para trabalharmos músculos isolados, quanto na execução. Extremamente grata por nosso resultado em conjunto. Somos fodas 💪🏼👊🏼\"",
       image: storyMari,
     },
   ];
