@@ -1,46 +1,31 @@
-import { useState } from "react";
 import story1 from "@/assets/story-1.jpeg";
 import story2 from "@/assets/story-2.jpeg";
 import story3 from "@/assets/story-3.jpeg";
 import story4 from "@/assets/story-4.jpeg";
 
 const SuccessStoriesSection = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   const stories = [
     {
       name: "Lucas Mendes",
-      age: 28,
       result: "Perdeu 18kg em 6 meses",
-      quote:
-        "Eu já tinha tentado de tudo: academia sozinho, dietas da internet, apps de treino. Nada funcionava porque eu não tinha direção. Com o Método Blade, pela primeira vez eu entendi o porquê de cada exercício e cada ajuste. Resultado? Menos 18kg e uma disposição que eu nunca tive.",
       highlight: "-18kg",
       image: story1,
     },
     {
       name: "Fernanda Costa",
-      age: 34,
       result: "Ganhou 6kg de massa magra",
-      quote:
-        "Sempre fui magra e achava impossível ganhar massa. O Ronald montou um plano específico pro meu corpo e minha rotina corrida. Em 8 meses, ganhei 6kg de músculo e finalmente me sinto forte e confiante.",
       highlight: "+6kg",
       image: story2,
     },
     {
       name: "Ricardo Alves",
-      age: 42,
       result: "Voltou a treinar após lesão",
-      quote:
-        "Depois de uma lesão no joelho, achei que nunca mais ia conseguir treinar pesado. A avaliação detalhada do Ronald identificou exatamente o que eu podia fazer. Hoje treino melhor do que antes da lesão, sem dor nenhuma.",
       highlight: "100%",
       image: story3,
     },
     {
       name: "Mariana Silva",
-      age: 31,
       result: "Definição muscular em 4 meses",
-      quote:
-        "Treinava há 3 anos e estava estagnada. Mudava de treino toda hora por ansiedade, como o Ronald fala. Quando ele assumiu, manteve o foco no processo. Em 4 meses, consegui a definição que eu buscava há anos.",
       highlight: "4 meses",
       image: story4,
     },
@@ -66,61 +51,39 @@ const SuccessStoriesSection = () => {
           </p>
         </div>
 
-        {/* Stories Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {stories.map((story, index) => (
+        {/* Stories Grid - Photos in Highlight */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
+          {stories.map((story) => (
             <div
               key={story.name}
-              className={`group bg-card/50 backdrop-blur-sm border rounded-lg p-8 transition-all duration-300 cursor-pointer ${
-                activeIndex === index
-                  ? "border-primary shadow-lg shadow-primary/10"
-                  : "border-border/50 hover:border-primary/50"
-              }`}
-              onClick={() => setActiveIndex(index)}
+              className="group relative overflow-hidden rounded-xl border-2 border-primary/30 hover:border-primary transition-all duration-300"
             >
-              {/* Header with photo and highlight */}
-              <div className="flex items-start justify-between mb-6">
-                <div className="flex items-center gap-4">
-                  {/* Photo */}
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
-                    <img
-                      src={story.image}
-                      alt={story.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-xl md:text-2xl text-foreground mb-1">
-                      {story.name}
-                    </h3>
-                    <p className="text-foreground/50 text-sm">
-                      {story.age} anos • {story.result}
-                    </p>
-                  </div>
-                </div>
-                <span className="font-display text-3xl md:text-4xl text-primary">
-                  {story.highlight}
-                </span>
+              {/* Photo */}
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={story.image}
+                  alt={story.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
 
-              {/* Quote */}
-              <blockquote className="relative">
-                <span className="text-primary/20 text-4xl font-display absolute -top-2 -left-2">
-                  "
-                </span>
-                <p className="text-foreground/80 text-sm md:text-base leading-relaxed pl-4">
-                  {story.quote}
-                </p>
-              </blockquote>
+              {/* Overlay with info */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+              
+              {/* Highlight Badge */}
+              <div className="absolute top-3 right-3 bg-primary text-primary-foreground font-display text-xl md:text-2xl px-3 py-1 rounded-lg">
+                {story.highlight}
+              </div>
 
-              {/* Decorative line */}
-              <div
-                className={`h-1 mt-6 rounded-full transition-all duration-500 ${
-                  activeIndex === index
-                    ? "bg-primary w-full"
-                    : "bg-border/50 w-16 group-hover:w-24"
-                }`}
-              />
+              {/* Info at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <h3 className="font-display text-lg md:text-xl text-foreground mb-1">
+                  {story.name}
+                </h3>
+                <p className="text-foreground/70 text-xs md:text-sm">
+                  {story.result}
+                </p>
+              </div>
             </div>
           ))}
         </div>
