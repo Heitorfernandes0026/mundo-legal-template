@@ -20,37 +20,39 @@ const VideoCard = ({ videoSrc, studentName, shouldLoad }: VideoCardProps) => {
   };
 
   return (
-    <div className="flex-1">
+    <div className="flex-1 min-w-0">
       {/* Video with yellow frame */}
       <div className="relative p-1.5 md:p-2 bg-primary rounded-xl md:rounded-2xl">
-        {shouldLoad ? (
-          <video
-            ref={videoRef}
-            src={videoSrc}
-            controls={isPlaying}
-            className={`w-full rounded-lg md:rounded-xl transition-opacity duration-300 ${isVideoLoaded ? "opacity-100" : "opacity-50"}`}
-            playsInline
-            preload="metadata"
-            onLoadedData={() => setIsVideoLoaded(true)}
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-            onEnded={() => setIsPlaying(false)}
-          />
-        ) : (
-          <div className="w-full aspect-video rounded-lg md:rounded-xl bg-background/50 animate-pulse" />
-        )}
-        
-        {/* Play Button Overlay */}
-        {!isPlaying && shouldLoad && (
-          <button
-            onClick={handlePlay}
-            className="absolute inset-1.5 md:inset-2 flex items-center justify-center bg-background/40 rounded-lg md:rounded-xl transition-all duration-300 hover:bg-background/30 group"
-          >
-            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-primary flex items-center justify-center neon-glow transition-transform duration-300 group-hover:scale-110">
-              <Play className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground ml-0.5" fill="currentColor" />
-            </div>
-          </button>
-        )}
+        <div className="relative aspect-[9/16] w-full overflow-hidden rounded-lg md:rounded-xl bg-background/50">
+          {shouldLoad ? (
+            <video
+              ref={videoRef}
+              src={videoSrc}
+              controls={isPlaying}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${isVideoLoaded ? "opacity-100" : "opacity-50"}`}
+              playsInline
+              preload="metadata"
+              onLoadedData={() => setIsVideoLoaded(true)}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              onEnded={() => setIsPlaying(false)}
+            />
+          ) : (
+            <div className="absolute inset-0 animate-pulse" />
+          )}
+          
+          {/* Play Button Overlay */}
+          {!isPlaying && shouldLoad && (
+            <button
+              onClick={handlePlay}
+              className="absolute inset-0 flex items-center justify-center bg-background/40 transition-all duration-300 hover:bg-background/30 group"
+            >
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-primary flex items-center justify-center neon-glow transition-transform duration-300 group-hover:scale-110">
+                <Play className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground ml-0.5" fill="currentColor" />
+              </div>
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Student Name */}
