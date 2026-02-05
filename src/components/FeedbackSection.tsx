@@ -74,6 +74,10 @@ const FeedbackSection = () => {
       videoSrc: "/feedback-video-2.mp4",
       studentName: "Aluna Bárbara - Mentoria Blade",
     },
+    {
+      videoSrc: "/feedback-ronara.mp4",
+      studentName: "Aluna Ronara - Mentoria Blade",
+    },
   ];
 
   // Lazy load video when section comes into view
