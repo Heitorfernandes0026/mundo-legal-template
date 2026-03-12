@@ -63,7 +63,7 @@ const MetodoBladeSection = () => {
             A metodologia
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gradient-neon mb-6 md:mb-8 leading-none">
-            O MÉTODO BLADE
+            COMO FUNCIONA O MÉTODO
           </h2>
           <p className="text-foreground/80 text-sm md:text-base lg:text-lg leading-relaxed max-w-3xl mx-auto px-2">
             Ele nasceu da prática, não de teoria. De anos atendendo pessoas diferentes e 
