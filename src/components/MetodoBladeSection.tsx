@@ -77,7 +77,7 @@ const MetodoBladeSection = () => {
         {/* Pilares subtitle */}
         <div className="text-center mb-8 md:mb-12">
           <h3 className="font-display text-xl sm:text-2xl md:text-3xl text-foreground mb-2">
-            O Método Blade possui <span className="text-primary">3 pilares</span>:
+            Como funciona o <span className="text-primary">Método Blade</span>
           </h3>
         </div>
 
