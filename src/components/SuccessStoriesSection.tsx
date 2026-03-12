@@ -62,34 +62,9 @@ const SuccessStoriesSection = () => {
 
               {/* Info below photo */}
               <div className="p-3 md:p-4">
-                <h3 className="font-display text-sm sm:text-base md:text-lg lg:text-xl text-foreground mb-0">
+                <h3 className="font-display text-sm sm:text-base md:text-lg lg:text-xl text-foreground">
                   {story.name}
                 </h3>
-                {story.subtitle && (
-                  <p className="text-foreground/60 text-[10px] sm:text-xs mb-1 md:mb-2">
-                    {story.subtitle}
-                  </p>
-                )}
-                
-                {/* Weight and Date Info */}
-                {story.weightBefore && story.weightAfter && (
-                  <div className="flex items-center gap-2 mb-1 text-[10px] sm:text-xs">
-                    <span className="text-foreground/60">{story.weightBefore}</span>
-                    <span className="text-primary">→</span>
-                    <span className="text-primary font-semibold">{story.weightAfter}</span>
-                  </div>
-                )}
-                {story.dateBefore && story.dateAfter && (
-                  <div className="flex items-center gap-2 mb-2 md:mb-3 text-[9px] sm:text-[10px]">
-                    <span className="text-foreground/50">{story.dateBefore}</span>
-                    <span className="text-foreground/50">|</span>
-                    <span className="text-foreground/50">{story.dateAfter}</span>
-                  </div>
-                )}
-                
-                <p className="text-foreground/70 text-[10px] sm:text-xs md:text-sm">
-                  {story.testimonial}
-                </p>
               </div>
             </div>
           ))}
