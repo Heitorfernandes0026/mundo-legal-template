@@ -8,21 +8,40 @@ const MetodoBladeSection = () => {
   const pilares = [
     {
       numero: "01",
-      titulo: "Avaliação Completa",
-      descricao:
-        "Nada começa sem entender a pessoa. Antes de qualquer treino, eu avalio histórico, rotina, limitações, nível real de treino, postura, objetivos e comportamento. Essa avaliação não é superficial, porque é ela que define todas as decisões depois.",
+      titulo: "Seu Ponto de Virada",
+      subtitulo: "Avaliação Completa",
+      items: [
+        "Avaliação das fotos",
+        "Anamnese detalhada",
+        "Entendimento de rotina",
+        "Histórico",
+        "Primeira vídeo chamada (Call Blade)",
+      ],
+      descricao: "Antes de qualquer treino, existe clareza e diagnóstico.",
     },
     {
       numero: "02",
-      titulo: "Planejamento Estratégico do Treino",
-      descricao:
-        "O treino não é genérico, não é ficha pronta e não é adaptado de outro aluno. Ele é pensado do zero, para aquele corpo, aquela rotina e aquele momento. A divisão de treino, os exercícios, séries, repetições, intervalos e cadência fazem parte de uma estratégia, não de um modelo pronto.",
+      titulo: "Sua Construção",
+      subtitulo: "Planejamento Estratégico",
+      items: [
+        "Planejamento estratégico",
+        "Divisão personalizada",
+        "Método de progressão",
+        "Organização da consultoria",
+      ],
+      descricao: "Nada é aleatório. Cada decisão tem estratégia.",
     },
     {
       numero: "03",
-      titulo: "Ajustes no Momento Certo",
-      descricao:
-        "Esse é o ponto central do método. No mercado, o que eu mais vejo é troca de treino por ansiedade: a pessoa acha que parou de evoluir, troca tudo, se perde e desiste. No Método Blade, o treino não é trocado por impulso. Ele é ajustado quando o corpo dá sinais reais de que precisa de ajuste. Tudo é baseado em observação, histórico e resposta ao treino.",
+      titulo: "Seu Resultado",
+      subtitulo: "Acompanhamento Contínuo",
+      items: [
+        "Ajustes estratégicos",
+        "Reavaliação por fotos",
+        "Vídeo chamada mensal",
+        "Correções baseadas em evolução",
+      ],
+      descricao: "Resultado vem do acompanhamento certo.",
     },
   ];
 
@@ -91,10 +110,21 @@ const MetodoBladeSection = () => {
               <span className="font-display text-4xl md:text-5xl text-primary/30 mb-3 md:mb-4 block">
                 {pilar.numero}
               </span>
-              <h4 className="font-display text-lg md:text-xl lg:text-2xl text-foreground mb-3 md:mb-4">
+              <h4 className="font-display text-lg md:text-xl lg:text-2xl text-foreground mb-2">
                 {pilar.titulo}
               </h4>
-              <p className="text-foreground/70 text-xs sm:text-sm md:text-base leading-relaxed">
+              <span className="text-primary text-xs md:text-sm font-semibold uppercase tracking-wider mb-4 block">
+                {pilar.subtitulo}
+              </span>
+              <ul className="space-y-2 mb-4">
+                {pilar.items.map((item, i) => (
+                  <li key={i} className="text-foreground/70 text-xs sm:text-sm md:text-base flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-foreground/90 text-xs sm:text-sm md:text-base leading-relaxed italic border-t border-border/30 pt-3">
                 {pilar.descricao}
               </p>
             </div>
