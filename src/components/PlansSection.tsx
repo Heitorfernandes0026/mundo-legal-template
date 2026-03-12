@@ -4,7 +4,7 @@ import plansBg from "@/assets/plans-bg.jpeg";
 const PlansSection = () => {
   const plans = [
     {
-      name: "BLADE START",
+      name: "PRIMEIRO PASSO",
       subtitle: "Comece certo",
       description:
         "Esse plano é para quem quer começar certo. É direção inicial. A pessoa recebe avaliação completa, treino personalizado e acesso à plataforma. É ideal para quem está saindo do zero ou voltando a treinar e precisa de estrutura, não de acompanhamento contínuo ainda.",
@@ -16,7 +16,7 @@ const PlansSection = () => {
       highlighted: false,
     },
     {
-      name: "BLADE CONFORT",
+      name: "EVOLUÇÃO ESTRATÉGICA",
       subtitle: "Acompanhamento estratégico",
       description:
         "Esse é o plano de acompanhamento estratégico. Aqui entra constância, correção e evolução real. O aluno recebe feedbacks semanais, acompanhamento do progresso, ajustes estratégicos quando necessário e reavaliação por fotos. Esse plano existe para evitar estagnação e abandono.",
@@ -29,7 +29,7 @@ const PlansSection = () => {
       highlighted: true,
     },
     {
-      name: "BLADE DIAMOND",
+      name: "TRANSFORMAÇÃO PREMIUM",
       subtitle: "Acompanhamento premium",
       description:
         "Esse é o acompanhamento premium, pensado para médio e longo prazo. Aqui o foco é evolução contínua. O aluno tem ajustes periódicos de treino, acompanhamento constante, reavaliações recorrentes e análise profunda do histórico. É para quem já entendeu que resultado vem da constância com direção, não da troca constante de treino.",
