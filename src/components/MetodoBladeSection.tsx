@@ -110,10 +110,21 @@ const MetodoBladeSection = () => {
               <span className="font-display text-4xl md:text-5xl text-primary/30 mb-3 md:mb-4 block">
                 {pilar.numero}
               </span>
-              <h4 className="font-display text-lg md:text-xl lg:text-2xl text-foreground mb-3 md:mb-4">
+              <h4 className="font-display text-lg md:text-xl lg:text-2xl text-foreground mb-2">
                 {pilar.titulo}
               </h4>
-              <p className="text-foreground/70 text-xs sm:text-sm md:text-base leading-relaxed">
+              <span className="text-primary text-xs md:text-sm font-semibold uppercase tracking-wider mb-4 block">
+                {pilar.subtitulo}
+              </span>
+              <ul className="space-y-2 mb-4">
+                {pilar.items.map((item, i) => (
+                  <li key={i} className="text-foreground/70 text-xs sm:text-sm md:text-base flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-foreground/90 text-xs sm:text-sm md:text-base leading-relaxed italic border-t border-border/30 pt-3">
                 {pilar.descricao}
               </p>
             </div>
