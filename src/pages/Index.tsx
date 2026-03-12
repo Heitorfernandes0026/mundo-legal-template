@@ -21,9 +21,9 @@ const Index = () => {
       <MarqueeBanner />
       <PlansSection />
       <AboutSection />
-      <FAQSection />
       <ContactSection />
       <PartnersBar />
+      <FAQSection />
     </div>
   );
 };
