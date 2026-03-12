@@ -5,49 +5,16 @@ import storyMari from "@/assets/story-mari.jpeg";
 
 interface Story {
   name: string;
-  subtitle?: string;
   highlight: string;
-  weightBefore?: string;
-  weightAfter?: string;
-  dateBefore?: string;
-  dateAfter?: string;
-  testimonial: string;
   image: string;
 }
 
 const SuccessStoriesSection = () => {
   const stories: Story[] = [
-    {
-      name: "Launelina",
-      highlight: "-30kg",
-      weightBefore: "96kg",
-      weightAfter: "66kg",
-      dateBefore: "23/03/2023",
-      dateAfter: "25/01/2025",
-      testimonial: "\"O meu Feedback não poderia ser melhor. Você é um profissional incrível, está desde o começo do meu processo de emagrecimento e hipertrofia comigo. Extremamente detalhista, tanto nos exércitos para trabalharmos músculos isolados, quanto na execução. Extremamente grata por nosso resultado em conjunto. Somos fodas 💪🏼👊🏼\"",
-      image: storyLaunelina,
-    },
-    {
-      name: "Reila",
-      subtitle: "8 Meses de Consultoria Blade",
-      highlight: "-20kg",
-      testimonial: "\"Treinar com o Ronald tem sido uma das melhores decisões que já tomei. A evolução que tive nesse tempo foi absurda, tanto fisicamente quanto mentalmente. Ele não é só um personal, é um amigo, que tem a maior paciência do mundo e sabe como motivar de verdade. Cada treino é diferente, desafiador e adaptado pra minha realidade, o que faz toda a diferença. Treinar com alguém que acredita no seu potencial e te puxa pra ser melhor a cada dia é um privilégio. Sou muito grata por essa caminhada e por ter ao meu lado um profissional tão dedicado, que realmente se importa e vibra junto comigo.\"",
-      image: storyReila,
-    },
-    {
-      name: "Valéria",
-      subtitle: "32,51% de gordura para 24,71% em 4 meses",
-      highlight: "-7,8% gordura",
-      testimonial: "\"Nunca gostei de academia e hoje não me imagino mais sem ela. Além do bem-estar, da saúde, a minha autoestima se aumentou bastante, pois depois que tive minha filha acabei me deixando de lado e foquei apenas em exercer meu papel de mãe. Ontem fui no Leandro e os resultados foram ótimos e isso me fez olhar para trás e reconhecer o quanto valeu a pena. Quero te agradecer de coração por esses 4 meses de trabalho incrível. Minha evolução é a prova do quanto seu acompanhamento fez toda a diferença, agradeço também a Bárbara pois ela sempre me incentivou e quando eu falei que iria para a academia, mais que de pressa ela me passou seu contato. Sozinha eu não conseguiria sair de 32,51% de gordura para 24,71%. Esse resultado é fruto da minha dedicação junto com o seu trabalho. Essa conquista também é sua pois sem a sua ajuda eu não teria conseguido 💪🍑🚀\"",
-      image: storyValeria,
-    },
-    {
-      name: "Mari",
-      subtitle: "2 Anos de Consultoria Blade",
-      highlight: "-10kg",
-      testimonial: "\"O meu Feedback não poderia ser melhor. Você é um profissional incrível, está desde o começo do meu processo de emagrecimento e hipertrofia comigo. Extremamente detalhista, tanto nos exércitos para trabalharmos músculos isolados, quanto na execução. Extremamente grata por nosso resultado em conjunto. Somos fodas 💪🏼👊🏼\"",
-      image: storyMari,
-    },
+    { name: "Launelina", highlight: "-30kg", image: storyLaunelina },
+    { name: "Reila", highlight: "-20kg", image: storyReila },
+    { name: "Valéria", highlight: "-7,8% gordura", image: storyValeria },
+    { name: "Mari", highlight: "-10kg", image: storyMari },
   ];
 
   return (
@@ -95,34 +62,9 @@ const SuccessStoriesSection = () => {
 
               {/* Info below photo */}
               <div className="p-3 md:p-4">
-                <h3 className="font-display text-sm sm:text-base md:text-lg lg:text-xl text-foreground mb-0">
+                <h3 className="font-display text-sm sm:text-base md:text-lg lg:text-xl text-foreground">
                   {story.name}
                 </h3>
-                {story.subtitle && (
-                  <p className="text-foreground/60 text-[10px] sm:text-xs mb-1 md:mb-2">
-                    {story.subtitle}
-                  </p>
-                )}
-                
-                {/* Weight and Date Info */}
-                {story.weightBefore && story.weightAfter && (
-                  <div className="flex items-center gap-2 mb-1 text-[10px] sm:text-xs">
-                    <span className="text-foreground/60">{story.weightBefore}</span>
-                    <span className="text-primary">→</span>
-                    <span className="text-primary font-semibold">{story.weightAfter}</span>
-                  </div>
-                )}
-                {story.dateBefore && story.dateAfter && (
-                  <div className="flex items-center gap-2 mb-2 md:mb-3 text-[9px] sm:text-[10px]">
-                    <span className="text-foreground/50">{story.dateBefore}</span>
-                    <span className="text-foreground/50">|</span>
-                    <span className="text-foreground/50">{story.dateAfter}</span>
-                  </div>
-                )}
-                
-                <p className="text-foreground/70 text-[10px] sm:text-xs md:text-sm">
-                  {story.testimonial}
-                </p>
               </div>
             </div>
           ))}
