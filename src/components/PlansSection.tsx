@@ -4,7 +4,7 @@ import plansBg from "@/assets/plans-bg.jpeg";
 const PlansSection = () => {
   const plans = [
     {
-      name: "BLADE START",
+      name: "PRIMEIRO PASSO",
       subtitle: "Comece certo",
       description:
         "Esse plano é para quem quer começar certo. É direção inicial. A pessoa recebe avaliação completa, treino personalizado e acesso à plataforma. É ideal para quem está saindo do zero ou voltando a treinar e precisa de estrutura, não de acompanhamento contínuo ainda.",
