@@ -29,7 +29,7 @@ const PlansSection = () => {
       highlighted: true,
     },
     {
-      name: "BLADE DIAMOND",
+      name: "TRANSFORMAÇÃO PREMIUM",
       subtitle: "Acompanhamento premium",
       description:
         "Esse é o acompanhamento premium, pensado para médio e longo prazo. Aqui o foco é evolução contínua. O aluno tem ajustes periódicos de treino, acompanhamento constante, reavaliações recorrentes e análise profunda do histórico. É para quem já entendeu que resultado vem da constância com direção, não da troca constante de treino.",
