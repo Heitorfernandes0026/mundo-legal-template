@@ -16,7 +16,7 @@ const PlansSection = () => {
       highlighted: false,
     },
     {
-      name: "BLADE CONFORT",
+      name: "EVOLUÇÃO ESTRATÉGICA",
       subtitle: "Acompanhamento estratégico",
       description:
         "Esse é o plano de acompanhamento estratégico. Aqui entra constância, correção e evolução real. O aluno recebe feedbacks semanais, acompanhamento do progresso, ajustes estratégicos quando necessário e reavaliação por fotos. Esse plano existe para evitar estagnação e abandono.",
