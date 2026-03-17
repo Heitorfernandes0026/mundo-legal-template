@@ -79,10 +79,10 @@ const HeroSection = () => {
         </div>
 
         {/* Before/After - Central, full width */}
-        <div className="flex-1 flex items-end justify-center gap-4 sm:gap-6 md:gap-8 px-4 pb-12">
+        <div className="flex-1 flex items-end justify-center gap-2 sm:gap-6 md:gap-8 px-2 sm:px-4 pb-12">
           {/* Before */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-xl border-2 border-border/50 w-[38vw] max-w-[280px] sm:max-w-[320px] md:max-w-[360px]">
+            <div className="relative overflow-hidden rounded-xl border-2 border-border/50 w-[45vw] sm:w-[38vw] max-w-[280px] sm:max-w-[320px] md:max-w-[360px]">
               <div className="aspect-[3/4]">
                 <img
                   src={ronaraAntes}
@@ -98,7 +98,7 @@ const HeroSection = () => {
 
           {/* After - slightly larger and elevated */}
           <div className="relative -mb-2">
-            <div className="relative overflow-hidden rounded-xl border-2 border-primary/60 w-[42vw] max-w-[310px] sm:max-w-[355px] md:max-w-[400px] shadow-[0_0_30px_hsl(50_100%_50%_/_0.15)]">
+            <div className="relative overflow-hidden rounded-xl border-2 border-primary/60 w-[48vw] sm:w-[42vw] max-w-[310px] sm:max-w-[355px] md:max-w-[400px] shadow-[0_0_30px_hsl(50_100%_50%_/_0.15)]">
               <div className="aspect-[3/4]">
                 <img
                   src={ronaraDepois}
