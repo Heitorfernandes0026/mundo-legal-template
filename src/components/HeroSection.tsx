@@ -98,7 +98,7 @@ const HeroSection = () => {
 
           {/* After - slightly larger and elevated */}
           <div className="relative -mb-2">
-            <div className="relative overflow-hidden rounded-xl border-2 border-primary/60 w-[42vw] max-w-[310px] sm:max-w-[355px] md:max-w-[400px] shadow-[0_0_30px_hsl(50_100%_50%_/_0.15)]">
+            <div className="relative overflow-hidden rounded-xl border-2 border-primary/60 w-[48vw] sm:w-[42vw] max-w-[310px] sm:max-w-[355px] md:max-w-[400px] shadow-[0_0_30px_hsl(50_100%_50%_/_0.15)]">
               <div className="aspect-[3/4]">
                 <img
                   src={ronaraDepois}
