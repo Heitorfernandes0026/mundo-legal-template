@@ -79,7 +79,7 @@ const HeroSection = () => {
         </div>
 
         {/* Before/After - Central, full width */}
-        <div className="flex-1 flex items-end justify-center gap-4 sm:gap-6 md:gap-8 px-4 pb-12">
+        <div className="flex-1 flex items-end justify-center gap-2 sm:gap-6 md:gap-8 px-2 sm:px-4 pb-12">
           {/* Before */}
           <div className="relative">
             <div className="relative overflow-hidden rounded-xl border-2 border-border/50 w-[38vw] max-w-[280px] sm:max-w-[320px] md:max-w-[360px]">
