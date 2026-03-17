@@ -42,80 +42,78 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-8 relative z-10 flex flex-col min-h-[calc(100vh-48px)]">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 flex-1">
-          {/* Left content - Text */}
-          <div className="space-y-5 md:space-y-6 text-center lg:text-left flex-1 max-w-xl">
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none tracking-wide">
-              <span className="text-gradient-neon">MÉTODO BLADE</span>
-            </h1>
-            <p className="text-foreground text-lg sm:text-xl md:text-2xl font-display tracking-wide">
-              O método que transforma vidas reais
+      <div className="relative z-10 flex flex-col min-h-[calc(100vh-48px)]">
+        {/* Text content on top */}
+        <div className="container mx-auto px-4 md:px-6 pt-24 md:pt-28 pb-4 text-center">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none tracking-wide">
+            <span className="text-gradient-neon">MÉTODO BLADE</span>
+          </h1>
+          <p className="text-foreground text-lg sm:text-xl md:text-2xl font-display tracking-wide mt-3">
+            O método que transforma vidas reais
+          </p>
+
+          <div className="mt-3 space-y-1">
+            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+              Você não precisa de mais um treino.
             </p>
+            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+              Você precisa de <span className="text-primary font-semibold">direção</span>, <span className="text-primary font-semibold">estratégia</span> e <span className="text-primary font-semibold">acompanhamento certo</span>.
+            </p>
+          </div>
 
-            <div className="space-y-2">
-              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                Você não precisa de mais um treino.
-              </p>
-              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                Você precisa de <span className="text-primary font-semibold">direção</span>, <span className="text-primary font-semibold">estratégia</span> e <span className="text-primary font-semibold">acompanhamento certo</span>.
-              </p>
-            </div>
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 justify-center">
+            <Button variant="neon" size="lg" className="gap-2 text-sm md:text-base" onClick={openWhatsApp}>
+              Saiba mais
+              <ArrowUpRight className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-foreground/20 text-foreground hover:bg-foreground/5 text-sm md:text-base"
+              onClick={scrollToPlans}
+            >
+              Quero iniciar minha transformação
+            </Button>
+          </div>
+        </div>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
-              <Button variant="neon" size="lg" className="gap-2 text-sm md:text-base" onClick={openWhatsApp}>
-                Saiba mais
-                <ArrowUpRight className="w-4 h-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-foreground/20 text-foreground hover:bg-foreground/5 text-sm md:text-base"
-                onClick={scrollToPlans}
-              >
-                Quero iniciar minha transformação
-              </Button>
+        {/* Before/After - Central, full width */}
+        <div className="flex-1 flex items-end justify-center gap-4 sm:gap-6 md:gap-8 px-4 pb-12">
+          {/* Before */}
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-xl border-2 border-border/50 w-[38vw] max-w-[280px] sm:max-w-[320px] md:max-w-[360px]">
+              <div className="aspect-[3/4]">
+                <img
+                  src={ronaraAntes}
+                  alt="Ronara - Antes"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute bottom-0 inset-x-0 bg-background/80 backdrop-blur-sm py-1.5 text-center">
+                <span className="text-muted-foreground text-xs sm:text-sm font-medium">ANTES</span>
+              </div>
             </div>
           </div>
 
-          {/* Right content - Before/After */}
-          <div className="flex items-end gap-3 sm:gap-4 md:gap-6 flex-shrink-0">
-            {/* Before */}
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-xl border-2 border-border/50 w-[140px] sm:w-[180px] md:w-[220px] lg:w-[260px]">
-                <div className="aspect-[3/4]">
-                  <img
-                    src={ronaraAntes}
-                    alt="Ronara - Antes"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute bottom-0 inset-x-0 bg-background/80 backdrop-blur-sm py-1.5 text-center">
-                  <span className="text-muted-foreground text-xs sm:text-sm font-medium">ANTES</span>
-                </div>
+          {/* After - slightly larger and elevated */}
+          <div className="relative -mb-2">
+            <div className="relative overflow-hidden rounded-xl border-2 border-primary/60 w-[42vw] max-w-[310px] sm:max-w-[355px] md:max-w-[400px] shadow-[0_0_30px_hsl(50_100%_50%_/_0.15)]">
+              <div className="aspect-[3/4]">
+                <img
+                  src={ronaraDepois}
+                  alt="Ronara - Depois"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute bottom-0 inset-x-0 bg-background/80 backdrop-blur-sm py-1.5 text-center">
+                <span className="text-primary text-xs sm:text-sm font-bold">DEPOIS</span>
               </div>
             </div>
 
-            {/* After - slightly larger and elevated */}
-            <div className="relative -mb-2">
-              <div className="relative overflow-hidden rounded-xl border-2 border-primary/60 w-[155px] sm:w-[200px] md:w-[245px] lg:w-[290px] shadow-[0_0_30px_hsl(50_100%_50%_/_0.15)]">
-                <div className="aspect-[3/4]">
-                  <img
-                    src={ronaraDepois}
-                    alt="Ronara - Depois"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute bottom-0 inset-x-0 bg-background/80 backdrop-blur-sm py-1.5 text-center">
-                  <span className="text-primary text-xs sm:text-sm font-bold">DEPOIS</span>
-                </div>
-              </div>
-
-              {/* -33kg badge */}
-              <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-primary text-primary-foreground font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-3 py-1 sm:px-4 sm:py-2 rounded-lg neon-glow z-10">
-                -33kg
-              </div>
+            {/* -33kg badge */}
+            <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-primary text-primary-foreground font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-3 py-1 sm:px-4 sm:py-2 rounded-lg neon-glow z-10">
+              -33kg
             </div>
           </div>
         </div>
