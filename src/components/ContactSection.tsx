@@ -17,14 +17,22 @@ const ContactSection = () => {
         {/* Header */}
         <div className="text-center mb-10 md:mb-16">
           <span className="inline-block text-primary font-semibold text-xs md:text-sm tracking-wider uppercase mb-3 md:mb-4">
-            Transforme seu corpo agora
+            PRONTO PARA COMEÇAR
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground mb-4 md:mb-6 leading-none">
-            PRONTO PARA <span className="text-gradient-neon">COMEÇAR?</span>
+            Pronta para o seu <span className="text-gradient-neon">ponto de virada?</span>
           </h2>
           <p className="text-foreground/60 text-sm md:text-lg lg:text-xl max-w-2xl mx-auto px-2">
             Entre em contato e dê o primeiro passo para a sua transformação física e mental.
           </p>
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-6 bg-primary text-primary-foreground font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-primary/90 transition-colors duration-300 neon-glow text-sm md:text-base"
+          >
+            Quero iniciar minha transformação
+          </a>
         </div>
 
         {/* Contact Cards */}
