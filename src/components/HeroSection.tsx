@@ -10,53 +10,70 @@ const HeroSection = () => {
   };
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/5500000000000", "_blank");
+    window.open("https://wa.me/5531991607563", "_blank");
   };
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-background">
-      {/* Subtle background texture */}
-      <div className="absolute inset-0 top-16 bg-gradient-to-br from-background via-card/30 to-background" />
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-card/30 to-background" />
 
-      {/* Neon curved lines decoration */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <svg
-          className="absolute top-20 right-0 w-[400px] md:w-[800px] h-[400px] md:h-[800px] opacity-20"
-          viewBox="0 0 800 800"
-          fill="none"
-        >
-          <path
-            d="M400 100 C600 100, 700 300, 700 400 C700 500, 600 700, 400 700"
-            stroke="hsl(50 100% 50%)"
-            strokeWidth="3"
-            fill="none"
-            className="animate-pulse-neon"
+      {/* Full-section before/after images */}
+      <div className="relative z-0 flex min-h-screen">
+        {/* Before image - left half */}
+        <div className="relative w-1/2 min-h-screen overflow-hidden">
+          <img
+            src={ronaraAntes}
+            alt="Ronara - Antes"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-          <path
-            d="M350 150 C550 150, 650 320, 650 400 C650 480, 550 650, 350 650"
-            stroke="hsl(50 100% 50%)"
-            strokeWidth="2"
-            fill="none"
-            opacity="0.5"
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/40" />
+          {/* Label */}
+          <div className="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-10">
+            <span className="text-muted-foreground text-sm sm:text-lg md:text-xl font-display tracking-widest bg-background/60 backdrop-blur-sm px-4 py-1.5 rounded-md">
+              ANTES
+            </span>
+          </div>
+        </div>
+
+        {/* After image - right half */}
+        <div className="relative w-1/2 min-h-screen overflow-hidden border-l-2 border-primary/40">
+          <img
+            src={ronaraDepois}
+            alt="Ronara - Depois"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-        </svg>
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/40" />
+          {/* Label */}
+          <div className="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-10">
+            <span className="text-primary text-sm sm:text-lg md:text-xl font-display tracking-widest font-bold bg-background/60 backdrop-blur-sm px-4 py-1.5 rounded-md neon-glow">
+              DEPOIS
+            </span>
+          </div>
+          {/* -33kg badge */}
+          <div className="absolute top-20 sm:top-24 right-3 sm:right-6 bg-primary text-primary-foreground font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-3 py-1 sm:px-5 sm:py-2 rounded-lg neon-glow z-10">
+            -33kg
+          </div>
+        </div>
       </div>
 
-      <div className="relative z-10 flex flex-col min-h-[calc(100vh-48px)]">
-        {/* Text content on top */}
-        <div className="container mx-auto px-4 md:px-6 pt-24 md:pt-28 pb-4 text-center">
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none tracking-wide">
+      {/* Overlayed text content */}
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none">
+        <div className="text-center pointer-events-auto">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-8xl leading-none tracking-wide drop-shadow-lg">
             <span className="text-gradient-neon">MÉTODO BLADE</span>
           </h1>
-          <p className="text-foreground text-lg sm:text-xl md:text-2xl font-display tracking-wide mt-3">
+          <p className="text-foreground text-base sm:text-xl md:text-2xl font-display tracking-wide mt-2 drop-shadow-md">
             O método que transforma vidas reais
           </p>
 
-          <div className="mt-3 space-y-1">
-            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+          <div className="mt-2 space-y-0.5">
+            <p className="text-foreground/80 text-xs sm:text-sm md:text-base leading-relaxed drop-shadow-sm">
               Você não precisa de mais um treino.
             </p>
-            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+            <p className="text-foreground/80 text-xs sm:text-sm md:text-base leading-relaxed drop-shadow-sm">
               Você precisa de <span className="text-primary font-semibold">direção</span>, <span className="text-primary font-semibold">estratégia</span> e <span className="text-primary font-semibold">acompanhamento certo</span>.
             </p>
           </div>
@@ -70,57 +87,17 @@ const HeroSection = () => {
             <Button
               variant="outline"
               size="lg"
-              className="border-foreground/20 text-foreground hover:bg-foreground/5 text-sm md:text-base"
+              className="border-foreground/20 text-foreground hover:bg-foreground/5 text-sm md:text-base backdrop-blur-sm"
               onClick={scrollToPlans}
             >
               Quero iniciar minha transformação
             </Button>
           </div>
         </div>
-
-        {/* Before/After - Central, full width */}
-        <div className="flex-1 flex items-end justify-center gap-2 sm:gap-6 md:gap-8 px-2 sm:px-4 pb-12">
-          {/* Before */}
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-xl border-2 border-border/50 w-[45vw] sm:w-[38vw] max-w-[280px] sm:max-w-[320px] md:max-w-[360px]">
-              <div className="aspect-[3/4]">
-                <img
-                  src={ronaraAntes}
-                  alt="Ronara - Antes"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute bottom-0 inset-x-0 bg-background/80 backdrop-blur-sm py-1.5 text-center">
-                <span className="text-muted-foreground text-xs sm:text-sm font-medium">ANTES</span>
-              </div>
-            </div>
-          </div>
-
-          {/* After - slightly larger and elevated */}
-          <div className="relative -mb-2">
-            <div className="relative overflow-hidden rounded-xl border-2 border-primary/60 w-[48vw] sm:w-[42vw] max-w-[310px] sm:max-w-[355px] md:max-w-[400px] shadow-[0_0_30px_hsl(50_100%_50%_/_0.15)]">
-              <div className="aspect-[3/4]">
-                <img
-                  src={ronaraDepois}
-                  alt="Ronara - Depois"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute bottom-0 inset-x-0 bg-background/80 backdrop-blur-sm py-1.5 text-center">
-                <span className="text-primary text-xs sm:text-sm font-bold">DEPOIS</span>
-              </div>
-            </div>
-
-            {/* -33kg badge */}
-            <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-primary text-primary-foreground font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-3 py-1 sm:px-4 sm:py-2 rounded-lg neon-glow z-10">
-              -33kg
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Faixa amarela contínua */}
-      <div className="absolute bottom-0 left-0 right-0 bg-primary py-2 md:py-3 overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 bg-primary py-2 md:py-3 overflow-hidden z-20">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(10)].map((_, i) => (
             <span key={i} className="mx-4 md:mx-8 text-primary-foreground font-display text-sm md:text-lg tracking-wider font-bold">
