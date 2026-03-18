@@ -55,25 +55,25 @@ const HeroSection = () => {
 
       {/* Overlayed text content */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none">
-        <div className="text-center pointer-events-auto">
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-8xl leading-none tracking-wide drop-shadow-lg">
+        <div className="text-center pointer-events-auto bg-background/70 backdrop-blur-md px-6 py-8 sm:px-10 sm:py-10 rounded-xl max-w-xl mx-4">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-9xl leading-none tracking-wide">
             <span className="text-gradient-neon">MÉTODO BLADE</span>
           </h1>
-          <p className="text-foreground text-base sm:text-xl md:text-2xl font-display tracking-wide mt-2 drop-shadow-md">
+          <p className="text-primary font-display text-lg sm:text-2xl md:text-3xl tracking-wide mt-3">
             O método que transforma vidas reais
           </p>
 
-          <div className="mt-2 space-y-0.5">
-            <p className="text-foreground/80 text-xs sm:text-sm md:text-base leading-relaxed drop-shadow-sm">
+          <div className="mt-3 space-y-1">
+            <p className="text-foreground text-sm sm:text-base md:text-lg leading-relaxed">
               Você não precisa de mais um treino.
             </p>
-            <p className="text-foreground/80 text-xs sm:text-sm md:text-base leading-relaxed drop-shadow-sm">
-              Você precisa de <span className="text-primary font-semibold">direção</span>, <span className="text-primary font-semibold">estratégia</span> e <span className="text-primary font-semibold">acompanhamento certo</span>.
+            <p className="text-foreground text-sm sm:text-base md:text-lg leading-relaxed">
+              Você precisa de <span className="text-primary font-bold">direção</span>, <span className="text-primary font-bold">estratégia</span> e <span className="text-primary font-bold">acompanhamento certo</span>.
             </p>
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 justify-center">
             <Button variant="neon" size="lg" className="gap-2 text-sm md:text-base" onClick={openWhatsApp}>
               Saiba mais
               <ArrowUpRight className="w-4 h-4" />
