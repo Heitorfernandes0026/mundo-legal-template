@@ -110,10 +110,10 @@ const FeedbackSection = () => {
         {/* Header */}
         <div className="text-center mb-10 md:mb-16">
           <span className="text-primary font-medium tracking-widest text-xs md:text-sm mb-3 md:mb-4 block uppercase">
-            O que dizem sobre o método
+            Quem fez, validou e transformou.
           </span>
           <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-gradient-neon mb-4 md:mb-6 leading-none px-2">
-            FEEDBACK DOS MENTORADOS BLADE
+            TIME DE VENCEDORES
           </h2>
         </div>
 
