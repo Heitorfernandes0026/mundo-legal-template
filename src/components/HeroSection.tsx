@@ -15,8 +15,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-background">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-card/30 to-background" />
 
       {/* Full-section before/after images */}
       <div className="relative z-0 flex min-h-screen">
