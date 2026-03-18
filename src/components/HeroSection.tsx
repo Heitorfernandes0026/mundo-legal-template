@@ -15,8 +15,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-background">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-card/30 to-background" />
 
       {/* Full-section before/after images */}
       <div className="relative z-0 flex min-h-screen">
@@ -27,8 +25,6 @@ const HeroSection = () => {
             alt="Ronara - Antes"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/40" />
           {/* Label */}
           <div className="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-10">
             <span className="text-muted-foreground text-sm sm:text-lg md:text-xl font-display tracking-widest bg-background/60 backdrop-blur-sm px-4 py-1.5 rounded-md">
@@ -44,8 +40,6 @@ const HeroSection = () => {
             alt="Ronara - Depois"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/40" />
           {/* Label */}
           <div className="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-10">
             <span className="text-primary text-sm sm:text-lg md:text-xl font-display tracking-widest font-bold bg-background/60 backdrop-blur-sm px-4 py-1.5 rounded-md neon-glow">
