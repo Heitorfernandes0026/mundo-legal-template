@@ -63,7 +63,7 @@ const HeroSection = () => {
           <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-9xl leading-none tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
             <span className="text-gradient-neon">MÉTODO BLADE</span>
           </h1>
-          <p className="text-primary font-display text-lg sm:text-2xl md:text-3xl tracking-wide mt-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          <p className="text-primary font-display text-base sm:text-xl md:text-2xl tracking-wide mt-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] whitespace-nowrap">
             O método que transforma vidas reais
           </p>
 
