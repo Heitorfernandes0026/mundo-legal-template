@@ -25,6 +25,8 @@ const HeroSection = () => {
             alt="Ronara - Antes"
             className="absolute inset-0 w-full h-full object-cover"
           />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-background/20" />
           {/* Label */}
           <div className="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-10">
             <span className="text-muted-foreground text-sm sm:text-lg md:text-xl font-display tracking-widest bg-background/60 backdrop-blur-sm px-4 py-1.5 rounded-md">
@@ -40,6 +42,8 @@ const HeroSection = () => {
             alt="Ronara - Depois"
             className="absolute inset-0 w-full h-full object-cover"
           />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-background/20" />
           {/* Label */}
           <div className="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-10">
             <span className="text-primary text-sm sm:text-lg md:text-xl font-display tracking-widest font-bold bg-background/60 backdrop-blur-sm px-4 py-1.5 rounded-md neon-glow">
@@ -53,21 +57,21 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Overlayed text content */}
+      {/* Overlayed text content - no background card */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none">
-        <div className="text-center pointer-events-auto bg-background/70 backdrop-blur-md px-6 py-8 sm:px-10 sm:py-10 rounded-xl max-w-xl mx-4">
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-9xl leading-none tracking-wide">
+        <div className="text-center pointer-events-auto px-6 py-8 sm:px-10 sm:py-10 max-w-xl mx-4">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-9xl leading-none tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
             <span className="text-gradient-neon">MÉTODO BLADE</span>
           </h1>
-          <p className="text-primary font-display text-lg sm:text-2xl md:text-3xl tracking-wide mt-3">
+          <p className="text-primary font-display text-lg sm:text-2xl md:text-3xl tracking-wide mt-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             O método que transforma vidas reais
           </p>
 
           <div className="mt-3 space-y-1">
-            <p className="text-foreground text-sm sm:text-base md:text-lg leading-relaxed">
+            <p className="text-foreground text-sm sm:text-base md:text-lg leading-relaxed drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
               Você não precisa de mais um treino.
             </p>
-            <p className="text-foreground text-sm sm:text-base md:text-lg leading-relaxed">
+            <p className="text-foreground text-sm sm:text-base md:text-lg leading-relaxed drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
               Você precisa de <span className="text-primary font-bold">direção</span>, <span className="text-primary font-bold">estratégia</span> e <span className="text-primary font-bold">acompanhamento certo</span>.
             </p>
           </div>
@@ -89,7 +93,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
       {/* Faixa amarela contínua */}
       <div className="absolute bottom-0 left-0 right-0 bg-primary py-2 md:py-3 overflow-hidden z-20">
         <div className="flex animate-marquee whitespace-nowrap">
