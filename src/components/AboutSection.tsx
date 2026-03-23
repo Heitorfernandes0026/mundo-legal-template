@@ -45,42 +45,35 @@ const AboutSection = () => {
             Conheça o treinador
           </span>
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gradient-neon mb-4 md:mb-6 leading-none">
-            RONALD<br />BLADE
+            CONHEÇA O<br />TREINADOR
           </h2>
           <div className="w-16 md:w-24 h-1 bg-primary md:ml-auto mb-6 md:mb-8" />
           
-          <p className="text-foreground/90 text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-8">
-            Minha missão é transformar o seu esforço em resultado real. 
-            Com mais de <span className="text-primary font-semibold">6 anos de atuação</span> e 
-            <span className="text-primary font-semibold"> centenas de vidas impactadas</span>, desenvolvi um método 
-            baseado em ciência e estratégia, fugindo do "achismo".
+          <p className="text-foreground/80 text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-6 italic">
+            Por trás de cada resultado consistente, existe <span className="text-primary font-semibold">direção</span>, <span className="text-primary font-semibold">critério</span> e <span className="text-primary font-semibold">experiência aplicada</span>.
           </p>
-          
-          <div className="mb-6 md:mb-8">
-            <p className="text-foreground/80 text-xs md:text-sm lg:text-base font-medium mb-3 md:mb-4">No meu método:</p>
-            <ul className="space-y-2 md:space-y-3 text-foreground/70 text-xs md:text-sm lg:text-base">
-              <li className="flex items-start gap-2 md:gap-3">
-                <span className="text-primary mt-0.5 md:mt-1">–</span>
-                <span>cada aluno tem um <span className="text-primary font-semibold">treino individual</span></span>
-              </li>
-              <li className="flex items-start gap-2 md:gap-3">
-                <span className="text-primary mt-0.5 md:mt-1">–</span>
-                <span>cada ajuste tem um <span className="text-primary font-semibold">motivo claro</span></span>
-              </li>
-              <li className="flex items-start gap-2 md:gap-3">
-                <span className="text-primary mt-0.5 md:mt-1">–</span>
-                <span>cada decisão é baseada em <span className="text-primary font-semibold">dados e observação</span></span>
-              </li>
-              <li className="flex items-start gap-2 md:gap-3">
-                <span className="text-primary mt-0.5 md:mt-1">–</span>
-                <span>o acompanhamento faz parte do serviço, <span className="text-primary font-semibold">não é extra</span></span>
-              </li>
-            </ul>
-          </div>
-          
-          <p className="text-foreground/70 text-xs md:text-sm lg:text-base leading-relaxed">
-            Aqui, não entregamos apenas treinos, mas um sistema completo de acompanhamento 
-            para quem busca alta performance e uma mudança estética definitiva.
+
+          <p className="text-foreground/90 text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-6">
+            Com mais de <span className="text-primary font-semibold">6 anos de atuação prática</span> e centenas de alunos acompanhados, Ronald Blade construiu sua autoridade não apenas pelos resultados entregues, mas pela capacidade de analisar, ajustar e conduzir cada processo com precisão.
+          </p>
+
+          <p className="text-foreground/90 text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-6">
+            Sua formação é construída de forma contínua, com aprofundamento em métodos avançados de treinamento, hipertrofia e emagrecimento, sempre com foco em <span className="text-primary font-semibold">aplicação prática e resultado real</span>.
+          </p>
+
+          <p className="text-foreground/90 text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-6">
+            Seu trabalho vai além da prescrição de treinos. Ele atua diretamente na leitura da evolução individual, identificando rapidamente o que precisa ser ajustado e tomando <span className="text-primary font-semibold">decisões estratégicas</span> para manter o progresso constante.
+          </p>
+
+          <p className="text-foreground/90 text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-6">
+            Cada aluno é tratado de forma única, com um acompanhamento próximo e direcionado — seja no presencial ou na consultoria online — garantindo <span className="text-primary font-semibold">clareza, eficiência e evolução contínua</span>.
+          </p>
+
+          <p className="text-foreground/80 text-sm md:text-base lg:text-lg leading-relaxed mb-2 font-semibold">
+            Aqui, não existe aleatoriedade.
+          </p>
+          <p className="text-primary text-sm md:text-base lg:text-lg leading-relaxed font-bold">
+            Existe método, critério e responsabilidade sobre o resultado entregue.
           </p>
         </div>
       </div>
