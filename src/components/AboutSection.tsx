@@ -66,7 +66,7 @@ const AboutSection = () => {
           </p>
 
           <p className="text-foreground/90 text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-6">
-            Cada aluno é tratado de forma única, com um acompanhamento próximo e direcionado — seja no presencial ou na consultoria online — garantindo <span className="text-primary font-semibold">clareza, eficiência e evolução contínua</span>.
+            Cada aluno é tratado de forma única, com um acompanhamento próximo e direcionado , seja no presencial ou na consultoria online, garantindo <span className="text-primary font-semibold">clareza, eficiência e evolução contínua</span>.
           </p>
 
           <p className="text-foreground/80 text-sm md:text-base lg:text-lg leading-relaxed mb-2 font-semibold">
