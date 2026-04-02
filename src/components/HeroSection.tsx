@@ -14,16 +14,16 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-background">
+    <section className="relative min-h-screen overflow-hidden bg-background pt-[48px] md:pt-[56px]">
 
       {/* Full-section before/after images */}
-      <div className="relative z-0 flex min-h-screen">
+      <div className="relative z-0 flex min-h-[calc(100vh-48px)] md:min-h-[calc(100vh-56px)]">
         {/* Before image - left half */}
-        <div className="relative w-1/2 min-h-screen overflow-hidden">
+        <div className="relative w-1/2 min-h-full overflow-hidden">
           <img
             src={ronaraAntes}
             alt="Ronara - Antes"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-top"
           />
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-background/20" />
@@ -36,11 +36,11 @@ const HeroSection = () => {
         </div>
 
         {/* After image - right half */}
-        <div className="relative w-1/2 min-h-screen overflow-hidden border-l-2 border-primary/40">
+        <div className="relative w-1/2 min-h-full overflow-hidden border-l-2 border-primary/40">
           <img
             src={ronaraDepois}
             alt="Ronara - Depois"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-top"
           />
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-background/20" />
