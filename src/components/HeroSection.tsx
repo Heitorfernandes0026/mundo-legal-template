@@ -17,18 +17,18 @@ const HeroSection = () => {
     <section className="relative min-h-screen overflow-hidden bg-background pt-[48px] md:pt-[56px]">
 
       {/* Full-section before/after images */}
-      <div className="relative z-0 flex min-h-[calc(100vh-48px)] md:min-h-[calc(100vh-56px)]">
+      <div className="absolute inset-0 z-0 flex pt-[48px] md:pt-[56px]">
         {/* Before image - left half */}
-        <div className="relative w-1/2 min-h-full overflow-hidden bg-background">
+        <div className="relative w-1/2 h-full overflow-hidden">
           <img
             src={ronaraAntes}
             alt="Ronara - Antes"
-            className="absolute inset-0 w-full h-full object-contain object-top"
+            className="absolute inset-0 w-full h-full object-cover object-top"
           />
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-background/20" />
           {/* Label */}
-          <div className="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-10">
+          <div className="absolute bottom-14 sm:bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 z-10">
             <span className="text-muted-foreground text-sm sm:text-lg md:text-xl font-display tracking-widest bg-background/60 backdrop-blur-sm px-4 py-1.5 rounded-md">
               ANTES
             </span>
@@ -36,22 +36,22 @@ const HeroSection = () => {
         </div>
 
         {/* After image - right half */}
-        <div className="relative w-1/2 min-h-full overflow-hidden border-l-2 border-primary/40 bg-background">
+        <div className="relative w-1/2 h-full overflow-hidden border-l-2 border-primary/40">
           <img
             src={ronaraDepois}
             alt="Ronara - Depois"
-            className="absolute inset-0 w-full h-full object-contain object-top"
+            className="absolute inset-0 w-full h-full object-cover object-top"
           />
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-background/20" />
           {/* Label */}
-          <div className="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-10">
+          <div className="absolute bottom-14 sm:bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 z-10">
             <span className="text-primary text-sm sm:text-lg md:text-xl font-display tracking-widest font-bold bg-background/60 backdrop-blur-sm px-4 py-1.5 rounded-md neon-glow">
               DEPOIS
             </span>
           </div>
           {/* -33kg badge */}
-          <div className="absolute top-20 sm:top-24 right-3 sm:right-6 bg-primary text-primary-foreground font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-3 py-1 sm:px-5 sm:py-2 rounded-lg neon-glow z-10">
+          <div className="absolute top-4 sm:top-24 right-3 sm:right-6 bg-primary text-primary-foreground font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl px-2 py-1 sm:px-5 sm:py-2 rounded-lg neon-glow z-10">
             -33kg
           </div>
         </div>
