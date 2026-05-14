@@ -122,9 +122,6 @@ const PlansSection = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-10 md:mb-16">
-          <span className="text-primary font-medium tracking-widest text-xs md:text-sm mb-3 md:mb-4 block uppercase">
-            Escolha seu plano
-          </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gradient-neon mb-4 md:mb-6 leading-none px-2">
             ESCOLHA SEU NÍVEL DE ACOMPANHAMENTO
           </h2>
