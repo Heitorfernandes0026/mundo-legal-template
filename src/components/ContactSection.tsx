@@ -1,9 +1,7 @@
 import { Instagram, MessageCircle, ArrowRight } from "lucide-react";
 
 const ContactSection = () => {
-  const whatsappNumber = "5531991607563";
-  const whatsappMessage = encodeURIComponent("Olá Ronald! Vim pelo site e gostaria de saber mais sobre a consultoria.");
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const whatsappLink = "https://wa.me/message/UV2SCH35Q2S5C1";
   const instagramLink = "https://instagram.com/blade_treinador";
 
   return (
